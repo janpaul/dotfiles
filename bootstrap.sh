@@ -62,6 +62,10 @@ brew_install ffmpeg imagemagick youtube-dl
 # install oh-my-zsh
 if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    THEME_CUSTOM=~/.oh-my-zsh/custom
+    [[ ! -d $THEME_CUSTOM/themes ]] && mkdir -p $THEME_CUSTOM/themes
+    git clone https://github.com/agkozak/agkozak-zsh-prompt $THEME_CUSTOM/themes/agkozak
+    ln -s $THEME_CUSTOM/themes/agkozak/agkozak-zsh-prompt.plugin.zsh $THEME_CUSTOM/themes/agkozak.zsh-theme
 fi
 
 #
@@ -79,12 +83,13 @@ link $(pwd)/ignore ~/.ignore
 #
 # git
 link $(pwd)/gitconfig ~/.gitconfig
-link -sf $(pwd)/gitignore ~/.gitignore
+link $(pwd)/gitignore ~/.gitignore
 [[ ! -f ~/.gitconfig.local ]] && echo "#" > ~/.gitconfig.local
 
 #
 # zsh
 link $(pwd)/zshrc.sh ~/.zshrc
+## 
 
 #
 # tmux
@@ -104,5 +109,17 @@ link $(pwd)/init.gradle ~/.gradle/init.gradle
 # maven
 mkdir -p ~/.m2
 link $(pwd)/maven-settings.xml ~/.m2/settings.xml
+
+# 
+# haskell
+link $(pwd)/ghci ~/.ghci
+
+#
+# ruby
+link $(pwd)/gemrc ~/.gemrc
+
+#
+# casks
+brew_cask google-chrome visual-studio-code tower transmit slack firefox iterm2 zoomus signal whatsapp
 
 exit 0
