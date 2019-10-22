@@ -120,6 +120,10 @@ link $(pwd)/gemrc ~/.gemrc
 
 #
 # casks
-brew_cask google-chrome visual-studio-code tower transmit slack firefox iterm2 zoomus signal whatsapp
+brew_cask iterm2
+brew_cask google-chrome firefox
+brew_cask visual-studio-code intellij-idea
+brew_cask signal whatsapp slack zoomus
+brew _cask tower transmit
 
 exit 0
