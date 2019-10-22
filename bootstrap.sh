@@ -122,8 +122,13 @@ link $(pwd)/gemrc ~/.gemrc
 # casks
 brew_cask iterm2
 brew_cask google-chrome firefox
-brew_cask visual-studio-code intellij-idea
+brew_cask visual-studio-code intellij-idea dash
 brew_cask signal whatsapp slack zoomus
-brew_cask tower transmit
+brew_cask tower transmit itsycal docker
+brew_cask iina vlc
 
+#
+# fonts
+brew tap homebrew/cask-fonts
+brew_cask font-inconsolata font-hack font-source-code-pro
 exit 0
