@@ -124,6 +124,6 @@ brew_cask iterm2
 brew_cask google-chrome firefox
 brew_cask visual-studio-code intellij-idea
 brew_cask signal whatsapp slack zoomus
-brew _cask tower transmit
+brew_cask tower transmit
 
 exit 0
