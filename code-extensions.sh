@@ -31,7 +31,7 @@ _install vscjava.vscode-java-debug
 _install vscjava.vscode-java-dependency
 _install vscjava.vscode-java-pack
 _install vscjava.vscode-java-test
-_install vscjava.vscode-java-maven
+_install vscjava.vscode-maven
 _install vscode-icons-team.vscode-icons
 _install zhuangtongfa.Material-theme
 _install Zignd.html-css-class-completion
