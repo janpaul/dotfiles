@@ -33,7 +33,8 @@ PG_HOME="/Applications/Postgres.app/Contents/Versions/11"
 #
 # update
 function update() {
-    brew update && brew upgrade && brew cask upgrade
+    brew update && brew upgrade
+    # brew cask upgrade
 }
 
 # Node
