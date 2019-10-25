@@ -35,3 +35,9 @@ _install vscjava.vscode-maven
 _install vscode-icons-team.vscode-icons
 _install zhuangtongfa.Material-theme
 _install Zignd.html-css-class-completion
+_install justusadam.language-haskell
+_install austin.code-gnu-global
+_install davidanson.vscode-markdownlint
+_install formulahendry.auto-rename-tag
+_install rebornix.ruby
+_install wayou.vscode-todo-highlight

@@ -55,6 +55,8 @@ brew_cask adoptopenjdk
 brew_install rbenv
 ### Swift
 brew_install swiftformat swiftlint
+### C / C++
+brew_install global
 ## images, video, ...
 brew_install ffmpeg imagemagick youtube-dl
 
