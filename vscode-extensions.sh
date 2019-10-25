@@ -35,3 +35,4 @@ _install vscjava.vscode-maven
 _install vscode-icons-team.vscode-icons
 _install zhuangtongfa.Material-theme
 _install Zignd.html-css-class-completion
+_install gamunu.vscode-yarn
