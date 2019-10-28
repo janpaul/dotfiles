@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 export ARCHFLAGS="-arch x86_64"
 
+#
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -26,9 +27,11 @@ LDFLAGS="-L/usr/local/opt/libxml2/lib $LDFLAGS"
 CPPFLAGS="-I/usr/local/opt/libxml2/include $CPPFLAGS"
 
 #
-# Postgresql
-PG_HOME=$(brew --prefix postgresql)
-[[ -d $PG_HOME ]] && PATH="${PATH}:${PG_HOME}/bin"
+# postgresql
+if [ $(brew --prefix postgresql) ]; then
+  PG_HOME=$(brew --prefix postgresql)
+  [[ -d $PG_HOME ]] && PATH="${PATH}:${PG_HOME}/bin"
+fi
 
 #
 # update
@@ -37,15 +40,18 @@ function update() {
     # brew cask upgrade
 }
 
-# Node
+#
+# node
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [[ -d $NVM_DIR ]] && nvm use default
 
-# Python
+#
+# python
 alias python="python3"
 alias pip="pip3"
 
+#
 # git
 alias pushm="git push origin master"
 alias pushd="git push origin development"
@@ -69,7 +75,7 @@ eval $(thefuck --alias)
 # Ruby
 PATH="/Users/janpaul/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
-source '/usr/local/Cellar/rbenv/1.1.2/libexec/../completions/rbenv.zsh'
+source "$(brew --prefix rbenv)/completions/rbenv.zsh"
 command rbenv rehash 2>/dev/null
 rbenv() {
   local command
