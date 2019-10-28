@@ -128,8 +128,9 @@ brew_cask visual-studio-code intellij-idea dash
 brew_cask signal whatsapp slack zoomus
 brew_cask tower transmit itsycal docker
 brew_cask iina vlc transmission handbrake
-brew_cask scummvm
-brew_cask install blender
+brew_cask scummvm steam
+brew_cask blender
+brew_cask keybase
 
 #
 # fonts
