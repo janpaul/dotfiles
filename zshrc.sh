@@ -27,7 +27,7 @@ CPPFLAGS="-I/usr/local/opt/libxml2/include $CPPFLAGS"
 
 #
 # Postgresql
-PG_HOME="/Applications/Postgres.app/Contents/Versions/11"
+PG_HOME=$(brew --prefix postgresql)
 [[ -d $PG_HOME ]] && PATH="${PATH}:${PG_HOME}/bin"
 
 #
@@ -43,8 +43,14 @@ export NVM_DIR=~/.nvm
 [[ -d $NVM_DIR ]] && nvm use default
 
 # Python
-alias python=python3
-alias pip=pip3
+alias python="python3"
+alias pip="pip3"
+
+# git
+alias pushm="git push origin master"
+alias pushd="git push origin development"
+alias pullm="git fetch origin && git merge origin/master"
+alias pulld="git fetch origin && git merge origin/development"
 
 # uses homebrew's version of curl
 PATH="/usr/local/opt/curl/bin:$PATH"
