@@ -38,7 +38,7 @@ link() {
 ## core
 brew_install git zsh tmux vim tldr kakoune
 ## utilities
-brew_install thefuck exa the_silver_searcher curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta
+brew_install thefuck exa the_silver_searcher curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta unrar
 ## server shizzle
 brew_install redis nginx postgresql sqlite
 ## programming languages and support
