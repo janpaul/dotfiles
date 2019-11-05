@@ -131,6 +131,7 @@ brew_cask iina vlc transmission handbrake
 brew_cask scummvm steam
 brew_cask blender
 brew_cask keybase
+brew_cask anaconda miniconda
 
 #
 # fonts
