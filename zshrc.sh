@@ -72,6 +72,27 @@ eval $(thefuck --alias)
 # Prefer exa
 [[ -x /usr/local/bin/exa ]] && alias ls="exa"
 
+#
+# rupa/z
+RUPAZ=/usr/local/bin/z.sh
+[[ -x $RUPAZ ]] && . $RUPAZ
+
+#
+# diff-so-fancy
+alias diff="diff-so-fancy"
+
+# 
+# bat
+alias bat="cat"
+
+# 
+# fd
+alias find="fd"
+
+# 
+# fzf
+alias fzf="fzf --preview=\"bat {} --color=always\""
+
 # Ruby
 PATH="/Users/janpaul/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
