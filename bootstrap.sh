@@ -36,9 +36,9 @@ link() {
 # install homebrew
 [[ ! -d /usr/local/Homebrew ]] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ## core
-brew_install git zsh tmux vim tldr kakoune
+brew_install git zsh tmux vim kakoune
 ## utilities
-brew_install thefuck exa the_silver_searcher curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta unrar
+brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta unrar diff-so-fancy bat ripgrep fd fzf
 ## server shizzle
 brew_install redis nginx postgresql sqlite
 ## programming languages and support
@@ -56,7 +56,7 @@ brew_install rbenv
 ### Swift
 brew_install swiftformat swiftlint
 ### C / C++
-brew_install global
+brew_install global cmake boost
 ## images, video, ...
 brew_install ffmpeg imagemagick youtube-dl
 
@@ -69,6 +69,12 @@ if [ ! -d ~/.oh-my-zsh ]; then
     git clone https://github.com/agkozak/agkozak-zsh-prompt $THEME_CUSTOM/themes/agkozak
     ln -s $THEME_CUSTOM/themes/agkozak/agkozak-zsh-prompt.plugin.zsh $THEME_CUSTOM/themes/agkozak.zsh-theme
 fi
+
+# 
+# install rupa/z
+RUPAZ=/usr/local/bin/z.sh
+curl "https://raw.githubusercontent.com/rupa/z/master/z.sh" > $RUPAZ
+[[ -f $RUPAZ ]] && chmod +x $RUPAZ
 
 #
 # install nvm
