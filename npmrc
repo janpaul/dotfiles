@@ -1,0 +1,12 @@
+# defaults
+color=true
+description=true
+format-package-lock=true
+loglevel=notice
+package-lock=true
+production=false
+registry=https://registry.npmjs.org/
+save=true
+
+# Allow for Fontawesome Pro
+@fortawesome:registry=https://npm.fontawesome.com/9825948D-D3E5-4BDB-9D49-A4313A0548E5

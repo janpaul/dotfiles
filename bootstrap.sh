@@ -103,6 +103,10 @@ link $(pwd)/zshrc.sh ~/.zshrc
 # tmux
 link $(pwd)/tmux.conf ~/.tmux.conf
 
+# 
+# npmrc
+link $(pwd)/npmrc ~/.npmrc
+
 #
 # vim
 link $(pwd)/vimrc ~/.vimrc
