@@ -36,7 +36,7 @@ fi
 #
 # update
 function update() {
-    brew update && brew upgrade
+    brew update && brew upgrade && brew cleanup
     # brew cask upgrade
 }
 
