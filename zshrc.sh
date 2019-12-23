@@ -5,6 +5,7 @@ export LC_ALL LANG
 
 # zsh
 autoload -U add-zsh-hook
+autoload zmv
 
 # oh-my-zsh
 export ZSH=~/.oh-my-zsh
