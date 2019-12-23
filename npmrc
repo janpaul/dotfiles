@@ -1,4 +1,3 @@
-# defaults
 color=true
 description=true
 format-package-lock=true
@@ -7,6 +6,5 @@ package-lock=true
 production=false
 registry=https://registry.npmjs.org/
 save=true
-
-# Allow for Fontawesome Pro
-@fortawesome:registry=https://npm.fontawesome.com/9825948D-D3E5-4BDB-9D49-A4313A0548E5
+@fortawesome:registry=https://npm.fontawesome.com/
+npm.fontawesome.com/:_authToken=DDFB2FEF-8B48-4AA0-A57B-D5FD576A761D
