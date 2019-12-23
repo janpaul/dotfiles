@@ -58,7 +58,7 @@ brew_install swiftformat swiftlint
 ### C / C++
 brew_install global cmake boost
 ## images, video, ...
-brew_install ffmpeg imagemagick youtube-dl
+brew_install ffmpeg imagemagick youtube-dl cmatrix
 
 #
 # install oh-my-zsh
