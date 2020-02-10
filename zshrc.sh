@@ -15,7 +15,7 @@ export UPDATE_ZSH_DAYS=13
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(brew docker git gitignore history node npm osx tmux vscode xcode yarn)
+plugins=(brew docker git gitignore github gitignore history rust node npm osx tmux vscode xcode yarn vscode)
 source $ZSH/oh-my-zsh.sh
 
 export ARCHFLAGS="-arch x86_64"
@@ -39,6 +39,8 @@ fi
 function update() {
     brew update && brew upgrade && brew cleanup
     # brew cask upgrade
+    ~/.cargo/bin/rustup update
+    tldr --update
 }
 
 #
@@ -117,6 +119,9 @@ rbenv() {
 # Homebrew
 PATH=~/bin:/usr/local/bin:$PATH
 export HOMEBREW_INSTALL_CLEANUP=true
+
+# Rust
+PATH=$PATH:~/.cargo/bin
 
 # configure the prompt
 AGKOZAK_MULTILINE=0
