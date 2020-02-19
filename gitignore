@@ -21,6 +21,9 @@
 Network Trash Folder
 Temporary Items
 
+# Error files
+yarn-error.log
+
 # temporary files
 *.tmp
 
