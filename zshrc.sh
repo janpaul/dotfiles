@@ -86,7 +86,7 @@ alias diff="diff-so-fancy"
 
 # 
 # bat
-alias bat="cat"
+alias cat="bat"
 
 # 
 # fd
@@ -94,7 +94,7 @@ alias find="fd"
 
 # 
 # fzf
-alias fzf="fzf --preview=\"bat {} --color=always\""
+alias fzf="fzf --preview=\"bat {}\""
 
 # Ruby
 PATH="/Users/janpaul/.rbenv/shims:${PATH}"
