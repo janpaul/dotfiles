@@ -89,10 +89,6 @@ alias diff="diff-so-fancy"
 alias cat="bat"
 
 # 
-# fd
-alias find="fd"
-
-# 
 # fzf
 alias fzf="fzf --preview=\"bat {}\""
 
