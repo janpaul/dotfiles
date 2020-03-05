@@ -21,7 +21,7 @@ brew_cask() {
        do [[ `brew cask list | grep $i` ]] || brew cask install $i
     done
 }
- 
+
 brew_start() {
     STARTED=`brew services list | grep $1 | awk '{print $2}'`
     [[ $STARTED = "stopped" ]] && brew services start $1
@@ -45,7 +45,7 @@ brew_install redis nginx postgresql sqlite
 ### Node
 brew_install node yarn
 ### Haskell
-brew_install ghc cabal-install 
+brew_install ghc cabal-install
 ### Python
 brew_install python
 ### JVM
@@ -57,6 +57,8 @@ brew_install rbenv
 brew_install swiftformat swiftlint
 ### C / C++
 brew_install global cmake boost
+### Wasm
+brew_install emscripten binaryen
 ## images, video, ...
 brew_install ffmpeg imagemagick youtube-dl cmatrix
 
@@ -70,7 +72,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
     ln -s $THEME_CUSTOM/themes/agkozak/agkozak-zsh-prompt.plugin.zsh $THEME_CUSTOM/themes/agkozak.zsh-theme
 fi
 
-# 
+#
 # install rupa/z
 RUPAZ=/usr/local/bin/z.sh
 curl "https://raw.githubusercontent.com/rupa/z/master/z.sh" > $RUPAZ
@@ -97,19 +99,19 @@ link $(pwd)/gitignore ~/.gitignore
 #
 # zsh
 link $(pwd)/zshrc.sh ~/.zshrc
-## 
+
+#
+# awesome vimrc
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 #
 # tmux
 link $(pwd)/tmux.conf ~/.tmux.conf
 
-# 
+#
 # npmrc
 link $(pwd)/npmrc ~/.npmrc
-
-#
-# vim
-link $(pwd)/vimrc ~/.vimrc
 
 #
 # gradle
@@ -117,12 +119,12 @@ mkdir -p ~/.gradle
 link $(pwd)/gradle.properties ~/.gradle/gradle.properties
 link $(pwd)/init.gradle ~/.gradle/init.gradle
 
-# 
+#
 # maven
 mkdir -p ~/.m2
 link $(pwd)/maven-settings.xml ~/.m2/settings.xml
 
-# 
+#
 # haskell
 link $(pwd)/ghci ~/.ghci
 
