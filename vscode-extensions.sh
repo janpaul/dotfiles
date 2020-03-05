@@ -64,6 +64,9 @@ _install vscjava.vscode-java-pack
 _install vscjava.vscode-java-test
 _install vscjava.vscode-maven
 
+## Wasm
+_install dtsvet.vscode-wasm
+
 ## Haskell
 _install justusadam.language-haskell
 
