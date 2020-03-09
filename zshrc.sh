@@ -7,6 +7,7 @@ export LC_ALL LANG
 autoload -U add-zsh-hook
 autoload zmv
 
+
 # oh-my-zsh
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="agkozak"
@@ -29,10 +30,8 @@ CPPFLAGS="-I/usr/local/opt/libxml2/include $CPPFLAGS"
 
 #
 # postgresql
-if [ $(brew --prefix postgresql) ]; then
-  PG_HOME=$(brew --prefix postgresql)
-  [[ -d $PG_HOME ]] && PATH="${PATH}:${PG_HOME}/bin"
-fi
+PG_HOME=/usr/local/opt/postgresql
+[[ -d $PG_HOME ]] && PATH="${PATH}:${PG_HOME}/bin"
 
 #
 # update
@@ -46,8 +45,25 @@ function update() {
 #
 # node
 export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[[ -d $NVM_DIR ]] && nvm use default
+#
+nvm() {
+    unset -f nvm
+    export NVM_DIR=~/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+    nvm "$@"
+}
+node() {
+    unset -f node
+    export NVM_DIR=~/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+    node "$@"
+}
+npm() {
+    unset -f npm
+    export NVM_DIR=~/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+    npm "$@"
+}
 
 #
 # python
@@ -91,26 +107,6 @@ alias cat="bat"
 # 
 # fzf
 alias fzf="fzf --preview=\"bat {}\""
-
-# Ruby
-PATH="/Users/janpaul/.rbenv/shims:${PATH}"
-export RBENV_SHELL=zsh
-source "$(brew --prefix rbenv)/completions/rbenv.zsh"
-command rbenv rehash 2>/dev/null
-rbenv() {
-  local command
-  command="${1:-}"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  rehash|shell)
-    eval "$(rbenv "sh-$command" "$@")";;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
 
 # Homebrew
 PATH=~/bin:/usr/local/bin:$PATH
