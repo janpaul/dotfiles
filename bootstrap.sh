@@ -79,6 +79,19 @@ curl "https://raw.githubusercontent.com/rupa/z/master/z.sh" > $RUPAZ
 [[ -f $RUPAZ ]] && chmod +x $RUPAZ
 
 #
+# pathogen
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+PATHOGEN=~/.vim/bundle
+mkdir -p $PATHOGEN
+mkdir -p ~/.cache/vim
+git clone https://github.com/kien/rainbow_parentheses.vim $PATHOGEN
+git clone https://github.com/vim-airline/vim-airline $PATHOGEN
+git clone https://github.com/airblade/vim-gitgutter $PATHOGEN
+git clone https://github.com/pangloss/vim-javascript $PATHOGEN
+link $(pwd)/vimrc ~/.vimrc
+
+#
 # install nvm
 if [ ! -d ~/.nvm ]; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
@@ -99,11 +112,6 @@ link $(pwd)/gitignore ~/.gitignore
 #
 # zsh
 link $(pwd)/zshrc.sh ~/.zshrc
-
-#
-# awesome vimrc
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 #
 # tmux
@@ -135,18 +143,19 @@ link $(pwd)/gemrc ~/.gemrc
 #
 # casks
 brew_cask iterm2
-brew_cask google-chrome firefox
+brew_cask google-chrome firefox brave-browser
 brew_cask visual-studio-code intellij-idea dash
-brew_cask signal whatsapp slack zoomus
+brew_cask signal whatsapp slack telegram
 brew_cask tower transmit itsycal docker
 brew_cask iina vlc transmission handbrake
 brew_cask scummvm steam
 brew_cask blender
 brew_cask keybase
 brew_cask anaconda miniconda
+brew_cask nightowl
 
 #
 # fonts
 brew tap homebrew/cask-fonts
-brew_cask font-inconsolata font-hack font-source-code-pro
+brew_cask font-inconsolata font-hack font-source-code-pro font-jetbrains-mono
 exit 0
