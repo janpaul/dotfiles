@@ -11,18 +11,21 @@ if [ $(id -u) -eq 0 ]; then
 fi
 
 brew_install() {
+  [[ $(uname -s) = "Linux" ]] && return
     for i
        do [[ ! -d $BREW_CELLAR/$i ]] && brew install $i
     done
 }
 
 brew_cask() {
+  [[ $(uname -s) = "Linux" ]] && return
     for i
        do [[ `brew cask list | grep $i` ]] || brew cask install $i
     done
 }
 
 brew_start() {
+  [[ $(uname -s) = "Linux" ]] && return
     STARTED=`brew services list | grep $1 | awk '{print $2}'`
     [[ $STARTED = "stopped" ]] && brew services start $1
 }
@@ -156,6 +159,6 @@ brew_cask nightowl
 
 #
 # fonts
-brew tap homebrew/cask-fonts
+[[ $(uname -s = "Darwin" ]] && brew tap homebrew/cask-fonts
 brew_cask font-inconsolata font-hack font-source-code-pro font-jetbrains-mono
 exit 0
