@@ -2,8 +2,8 @@
 #
 
 BREW_CELLAR="/usr/local/Cellar"
-NODE_STABLE=10.15
-NODE_LATEST=12.13
+NODE_STABLE=12
+NODE_LATEST=13
 
 if [ $(id -u) -eq 0 ]; then
     echo "don't run this script as root or under sudo. It can and will mess up your homedir."
@@ -146,19 +146,18 @@ link $(pwd)/gemrc ~/.gemrc
 #
 # casks
 brew_cask iterm2
-brew_cask google-chrome firefox brave-browser
-brew_cask visual-studio-code intellij-idea dash
+brew_cask brave-browser
+brew_cask visual-studio-code intellij-idea
 brew_cask signal whatsapp slack telegram
-brew_cask tower transmit itsycal docker
-brew_cask iina vlc transmission handbrake
+brew_cask tower transmit
+brew_cask iina transmission handbrake
 brew_cask scummvm steam
 brew_cask blender
 brew_cask keybase
 brew_cask anaconda miniconda
-brew_cask nightowl
 
 #
 # fonts
 [[ $(uname -s = "Darwin" ]] && brew tap homebrew/cask-fonts
-brew_cask font-inconsolata font-hack font-source-code-pro font-jetbrains-mono
+brew_cask font-hack font-jetbrains-mono
 exit 0
