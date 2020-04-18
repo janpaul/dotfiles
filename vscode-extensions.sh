@@ -18,11 +18,13 @@ _install ritwickdey.liveServer
 _install visualstudioexptteam.vscodeintellicode
 _install wayou.vscode-todo-highlight
 _install davidanson.vscode-markdownlint
+_install ms-vscode-remote.remote-ssh
 
 ## Theme + icons
 _install vscode-icons-team.vscode-icons
 _install zhuangtongfa.Material-theme
 _install arcticicestudio.nord-visual-studio-code
+_install tomphilbin.gruvbox-themes
 
 ## Viewers
 tomoki1207.pdf
@@ -80,3 +82,5 @@ _install kalitaalexey.vscode-rust
 ## Swift
 _install kasik96.swift
 
+## Database
+_install mtxr.sqltools
