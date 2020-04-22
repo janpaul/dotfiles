@@ -1,5 +1,5 @@
 [user]
-	name = JP
+	name = Jan Paul
 	email = janpaul@elidon.net
 	signingkey = 2BF3E76701D3C7B3F3A987FDE1F2217D450830F7
 
@@ -39,3 +39,8 @@
 	path = ~/.gitconfig.local
 [gpg]
 	program = /usr/local/bin/gpg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
