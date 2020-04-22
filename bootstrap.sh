@@ -148,8 +148,9 @@ link $(pwd)/gemrc ~/.gemrc
 brew_cask iterm2
 brew_cask brave-browser
 brew_cask visual-studio-code intellij-idea
-brew_cask signal whatsapp slack telegram
-brew_cask tower transmit
+brew_cask signal whatsapp telegram
+brew_cask microsoft-teams slack
+brew_cask tower transmit github
 brew_cask iina transmission handbrake
 brew_cask scummvm steam
 brew_cask blender
