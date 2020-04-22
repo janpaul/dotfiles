@@ -4,9 +4,7 @@ LANG=nl_NL.UTF-8
 export LC_ALL LANG
 
 # zsh
-autoload -U add-zsh-hook
 autoload zmv
-
 
 # oh-my-zsh
 export ZSH=~/.oh-my-zsh
@@ -36,7 +34,7 @@ PG_HOME=/usr/local/opt/postgresql
 #
 # update
 function update() {
-    brew update && brew upgrade && brew cleanup
+    brew update && brew upgrade && brew cask upgrade && brew cleanup
     # brew cask upgrade
     ~/.cargo/bin/rustup update
     tldr --update
