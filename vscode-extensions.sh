@@ -77,7 +77,7 @@ _install rebornix.ruby
 _install wingrunr21.vscode-ruby
 
 ## Rust
-_install kalitaalexey.vscode-rust
+_install rust-lang.rust
 
 ## Swift
 _install kasik96.swift
