@@ -6,6 +6,10 @@ export LC_ALL LANG
 # zsh
 autoload zmv
 
+#
+# Homebrew
+[[ -d ~/.linuxbrew ]] && eval $(~/.linuxbrew/bin/brew shellenv)
+[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
 
 # oh-my-zsh
 export ZSH=~/.oh-my-zsh
@@ -63,11 +67,6 @@ npm() {
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
     npm "$@"
 }
-
-#
-# Homebrew
-[[ -d ~/.linuxbrew ]] && eval $(~/.linuxbrew/bin/brew shellenv)
-[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
 
 #
 # python
