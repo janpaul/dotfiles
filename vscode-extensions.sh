@@ -10,7 +10,7 @@ _install() {
 
 ## Common
 _install christian-kohler.npm-intellisense
-_install coenraadS.bracket-pair-colorizer
+_install coenraads.bracket-pair-colorizer-2
 _install editorConfig.editorConfig
 _install formulahendry.auto-close-tag
 _install redhat.vscode-yaml
@@ -19,6 +19,8 @@ _install visualstudioexptteam.vscodeintellicode
 _install wayou.vscode-todo-highlight
 _install davidanson.vscode-markdownlint
 _install ms-vscode-remote.remote-ssh
+_install aaron-bond.better-comments
+_install christian-kohler.path-intellisense
 
 ## Theme + icons
 _install vscode-icons-team.vscode-icons
@@ -27,7 +29,8 @@ _install arcticicestudio.nord-visual-studio-code
 _install tomphilbin.gruvbox-themes
 
 ## Viewers
-tomoki1207.pdf
+_install tomoki1207.pdf
+_install cssho.vscode-svgviewer
 
 ## Database
 _install bajdzis.vscode-database
@@ -43,6 +46,7 @@ _install eg2.vscode-npm-script
 _install esbenp.prettier-vscode
 _install msjsdiag.debugger-for-chrome
 _install jamesbirtles.svelte-vscode
+_install wix.vscode-import-cost
 
 ## git
 _install donjayamanne.githistory
