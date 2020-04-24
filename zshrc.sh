@@ -6,6 +6,7 @@ export LC_ALL LANG
 # zsh
 autoload zmv
 
+
 # oh-my-zsh
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="agkozak"
@@ -64,8 +65,9 @@ npm() {
 }
 
 #
-# Linux brew
+# Homebrew
 [[ -d ~/.linuxbrew ]] && eval $(~/.linuxbrew/bin/brew shellenv)
+[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
 
 #
 # python
@@ -111,7 +113,6 @@ alias cat="bat"
 alias fzf="fzf --preview=\"bat {}\""
 
 # Homebrew
-PATH=~/bin:/usr/local/bin:$PATH
 export HOMEBREW_INSTALL_CLEANUP=true
 
 # Rust
