@@ -64,6 +64,10 @@ npm() {
 }
 
 #
+# Linux brew
+[[ -d ~/.linuxbrew ]] && eval $(~/.linuxbrew/bin/brew shellenv)
+
+#
 # python
 alias python="python3"
 alias pip="pip3"

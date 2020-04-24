@@ -3,7 +3,7 @@
 
 BREW_CELLAR="/usr/local/Cellar"
 NODE_STABLE=12
-NODE_LATEST=13
+NODE_LATEST=14
 
 if [ $(id -u) -eq 0 ]; then
     echo "don't run this script as root or under sudo. It can and will mess up your homedir."
