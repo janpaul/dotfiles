@@ -61,3 +61,7 @@ link $(pwd)/tmux.conf ~/.tmux.conf
 # npmrc
 link $(pwd)/npmrc ~/.npmrc
 
+#
+# Set NL locales
+sudo locale-gen nl_NL.UTF-8
+sudo update-locale LANG=nl_NL.UTF-8
