@@ -1,4 +1,4 @@
-#
+#!/usr/bin/zsh
 
 BREW_CELLAR="~/.linuxbrew/Cellar"
 
@@ -8,14 +8,13 @@ link() {
 }
 
 brew_install() {
-  [[ $(uname -s) = "Linux" ]] && return
     for i
        do [[ ! -d $BREW_CELLAR/$i ]] && brew install $i
     done
 }
 
 # Install Linux brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew_install git zsh tmux vim
 brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta unrar diff-so-fancy bat ripgrep fd fzf
@@ -24,19 +23,13 @@ brew_install global cmake boost
 
 #
 # install oh-my-zsh
-if [ ! -d ~/.oh-my-zsh ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    THEME_CUSTOM=~/.oh-my-zsh/custom
-    [[ ! -d $THEME_CUSTOM/themes ]] && mkdir -p $THEME_CUSTOM/themes
-    git clone https://github.com/agkozak/agkozak-zsh-prompt $THEME_CUSTOM/themes/agkozak
-    ln -s $THEME_CUSTOM/themes/agkozak/agkozak-zsh-prompt.plugin.zsh $THEME_CUSTOM/themes/agkozak.zsh-theme
-fi
-
-#
-# install rupa/z
-RUPAZ=/usr/local/bin/z.sh
-curl "https://raw.githubusercontent.com/rupa/z/master/z.sh" > $RUPAZ
-[[ -f $RUPAZ ]] && chmod +x $RUPAZ
+#if [ ! -d ~/.oh-my-zsh ]; then
+#    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#   THEME_CUSTOM=~/.oh-my-zsh/custom
+#    [[ ! -d $THEME_CUSTOM/themes ]] && mkdir -p $THEME_CUSTOM/themes
+#    git clone https://github.com/agkozak/agkozak-zsh-prompt $THEME_CUSTOM/themes/agkozak
+#    ln -s $THEME_CUSTOM/themes/agkozak/agkozak-zsh-prompt.plugin.zsh $THEME_CUSTOM/themes/agkozak.zsh-theme
+#fi
 
 #
 # install nvm
