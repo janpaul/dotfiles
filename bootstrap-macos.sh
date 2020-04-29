@@ -156,9 +156,15 @@ brew_cask scummvm steam
 brew_cask blender
 brew_cask keybase
 brew_cask anaconda miniconda
+brew_cask protonvpn
 
 #
 # fonts
 [[ $(uname -s = "Darwin" ]] && brew tap homebrew/cask-fonts
 brew_cask font-hack font-jetbrains-mono
+
+#
+# JDK
+brew tap adoptopenjdk/openjdk
+
 exit 0
