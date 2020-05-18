@@ -157,6 +157,8 @@ brew_cask blender
 brew_cask keybase
 brew_cask anaconda miniconda
 brew_cask protonvpn
+brew_cask parallels
+brew_cask screen
 
 #
 # fonts
