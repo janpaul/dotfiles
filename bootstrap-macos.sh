@@ -161,6 +161,15 @@ brew_cask parallels
 brew_cask screen
 
 #
+# Sets some macOs defaults, to make sure they are matching my requirements
+defaults write -g ApplePressAndHoldEnabled -bool true
+defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+defaults write com.apple.finder QLEnableTextSelection -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true
+chflags nohidden ~/Library/
+
+#
 # fonts
 [[ $(uname -s = "Darwin" ]] && brew tap homebrew/cask-fonts
 brew_cask font-hack font-jetbrains-mono
