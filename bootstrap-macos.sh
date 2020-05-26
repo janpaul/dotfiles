@@ -159,6 +159,7 @@ brew_cask anaconda miniconda
 brew_cask protonvpn
 brew_cask parallels
 brew_cask screen
+brew_cask balenaetcher
 
 #
 # Sets some macOs defaults, to make sure they are matching my requirements
