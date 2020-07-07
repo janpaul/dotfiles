@@ -69,6 +69,8 @@ _install vscjava.vscode-java-dependency
 _install vscjava.vscode-java-pack
 _install vscjava.vscode-java-test
 _install vscjava.vscode-maven
+_install scala-lang.scala
+_install mathiasfrohlich.kotlin
 
 ## Wasm
 _install dtsvet.vscode-wasm
