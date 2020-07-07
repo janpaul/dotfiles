@@ -43,6 +43,8 @@ function update() {
     # brew cask upgrade
     ~/.cargo/bin/rustup update
     tldr --update
+    nvm install 12 # LTS
+    nvm install 14 # Latest
 }
 
 #
