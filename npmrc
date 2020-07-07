@@ -5,6 +5,3 @@ loglevel=notice
 package-lock=true
 production=false
 save=true
-@fortawesome:registry=https://npm.fontawesome.com/
-npm.fontawesome.com/:_authToken=DDFB2FEF-8B48-4AA0-A57B-D5FD576A761D
-//registry.npmjs.org/:_authToken=0faa4f1d-aa2a-4701-8ad9-8454cad98902
