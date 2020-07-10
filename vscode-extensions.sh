@@ -61,6 +61,7 @@ _install ms-python.python
 ## C / C++
 _install ms-vscode.cpptools
 _install austin.code-gnu-global
+_install ms-vscode.cmake-tools
 
 ## Java
 _install redhat.java
