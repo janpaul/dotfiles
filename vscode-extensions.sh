@@ -24,8 +24,6 @@ _install christian-kohler.path-intellisense
 
 ## Theme + icons
 _install vscode-icons-team.vscode-icons
-_install zhuangtongfa.Material-theme
-_install arcticicestudio.nord-visual-studio-code
 _install tomphilbin.gruvbox-themes
 
 ## Viewers
@@ -47,6 +45,7 @@ _install esbenp.prettier-vscode
 _install msjsdiag.debugger-for-chrome
 _install jamesbirtles.svelte-vscode
 _install wix.vscode-import-cost
+_install ms-vscode.vscode-typescript-tslint-plugin
 
 ## git
 _install donjayamanne.githistory
@@ -91,3 +90,7 @@ _install kasik96.swift
 
 ## Database
 _install mtxr.sqltools
+
+## Snippets
+_install abusaidm.html-snippets
+_install xabikos.javascriptsnippets
