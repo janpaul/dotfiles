@@ -126,6 +126,12 @@ AGKOZAK_COLORS_USER_HOST=green
 AGKOZAK_COLORS_PATH=blue
 AGKOZAK_COLORS_BRANCH_STATUS=yellow
 
+#
+# Java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+alias j14="export JAVA_HOME=`/usr/libexec/java_home -v 14`; java -version"
+alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
+
 # Completely block all autocorrect
 unsetopt correct_all
 unsetopt correct
