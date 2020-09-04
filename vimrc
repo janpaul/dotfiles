@@ -21,8 +21,3 @@ set cursorline
 set relativenumber
 set backupdir=~/.cache/vim
 set dir=~/.cache/vim
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
