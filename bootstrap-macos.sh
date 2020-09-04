@@ -146,7 +146,6 @@ link $(pwd)/gemrc ~/.gemrc
 #
 # casks
 brew_cask iterm2
-brew_cask brave-browser
 brew_cask visual-studio-code intellij-idea
 brew_cask signal whatsapp telegram
 brew_cask microsoft-teams slack
@@ -154,12 +153,13 @@ brew_cask tower transmit github
 brew_cask iina transmission handbrake youtube-to-mp3
 brew_cask scummvm steam
 brew_cask blender
-brew_cask keybase
 brew_cask anaconda miniconda
 brew_cask protonvpn
 brew_cask parallels
 brew_cask screen
 brew_cask balenaetcher
+brew_cask hey
+brew_cask tor-browser
 
 #
 # Sets some macOs defaults, to make sure they are matching my requirements

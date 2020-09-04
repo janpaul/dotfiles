@@ -1,7 +1,6 @@
 [user]
 	name = janpaul
 	email = janpaul@elidon.net
-	signingkey = 2BF3E76701D3C7B3F3A987FDE1F2217D450830F7
 
 [core]
 	excludesfile = ~/.gitignore
