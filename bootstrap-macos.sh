@@ -49,7 +49,7 @@ brew_install ghc cabal-install
 ### Python
 brew_install python
 ### JVM
-brew_install kotlin scala leiningen gradle maven
+brew_install kotlin scala leiningen gradle maven sbt
 brew_cask adoptopenjdk
 ### Ruby
 brew_install rbenv
