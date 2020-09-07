@@ -151,7 +151,7 @@ brew_cask iina transmission handbrake youtube-to-mp3 plex
 brew_cask scummvm steam
 brew_cask blender
 brew_cask anaconda miniconda
-brew_cask protonvpn
+brew_cask protonvpn openvpn-connect
 brew_cask parallels
 brew_cask screen
 brew_cask balenaetcher
