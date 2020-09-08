@@ -147,6 +147,7 @@ brew_cask visual-studio-code intellij-idea
 brew_cask signal whatsapp telegram
 brew_cask slack
 brew_cask tower transmit github
+brew_cask google-chrome
 brew_cask iina transmission handbrake youtube-to-mp3 plex
 brew_cask scummvm steam
 brew_cask blender
