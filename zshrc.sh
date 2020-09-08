@@ -40,7 +40,6 @@ PG_HOME=/usr/local/opt/postgresql
 # update
 function update() {
     brew update && brew upgrade && brew cask upgrade && brew cleanup
-    # brew cask upgrade
     ~/.cargo/bin/rustup update
     tldr --update
     nvm install 12 # LTS
