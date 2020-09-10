@@ -149,7 +149,7 @@ brew_cask slack
 brew_cask tower transmit github
 brew_cask google-chrome
 brew_cask iina transmission handbrake youtube-to-mp3 plex
-brew_cask scummvm steam
+brew_cask scummvm steam shadow-beta
 brew_cask blender
 brew_cask anaconda miniconda
 brew_cask protonvpn openvpn-connect
