@@ -128,7 +128,7 @@ AGKOZAK_COLORS_BRANCH_STATUS=yellow
 #
 # Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-alias j14="export JAVA_HOME=`/usr/libexec/java_home -v 14`; java -version"
+alias j15="export JAVA_HOME=`/usr/libexec/java_home -v 15`; java -version"
 alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
 
 # Completely block all autocorrect
@@ -142,3 +142,4 @@ export CPPFLAGS
 export PKG_CONFIG_PATH
 export EDITOR=vim
 export EMAIL=janpaul@elidon.net
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
