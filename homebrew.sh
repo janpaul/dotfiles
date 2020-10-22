@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+BREW_CELLAR="/usr/local/Cellar"
+
 brew_install() {
     for i
       do [[ ! -d $BREW_CELLAR/$i ]] && brew install $i
@@ -62,3 +64,12 @@ brew_cask balenaetcher
 brew_cask hey
 brew_cask tor-browser
 brew_cask docker
+
+#
+# fonts
+brew tap homebrew/cask-fonts
+brew_cask font-hack font-jetbrains-mono
+
+# 
+# Java
+brew tap adoptopenjdk/openjdk

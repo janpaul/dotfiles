@@ -1,7 +1,6 @@
 #!/bin/zsh
 #
 
-BREW_CELLAR="/usr/local/Cellar"
 NODE_STABLE=12
 NODE_LATEST=14
 
@@ -105,14 +104,5 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.finder AppleShowAllFiles -bool true
 chflags nohidden ~/Library/
-
-#
-# fonts
-brew tap homebrew/cask-fonts
-brew_cask font-hack font-jetbrains-mono
-
-#
-# JDK
-brew tap adoptopenjdk/openjdk
 
 exit 0
