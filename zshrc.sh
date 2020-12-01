@@ -40,8 +40,8 @@ PG_HOME=/usr/local/opt/postgresql
 # update
 function update() {
     brew update && brew upgrade && brew upgrade --cask && brew cleanup
-    ~/.cargo/bin/rustup update
     tldr --update
+    rustup update
     nvm install 12 # LTS
     nvm install 14 # Latest
 }
@@ -143,3 +143,7 @@ export PKG_CONFIG_PATH
 export EDITOR=vim
 export EMAIL=janpaul@elidon.net
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/janpaul/.sdkman"
+[[ -s "/Users/janpaul/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/janpaul/.sdkman/bin/sdkman-init.sh"
