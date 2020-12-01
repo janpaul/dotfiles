@@ -1,9 +1,8 @@
-# IntelliJ IDEA
+# IDE / Editors
 .idea
 *.iml
-
-# Visual Studio Code
 .vscode
+.nova
 
 # Mac shizzle
 .DS_Store
