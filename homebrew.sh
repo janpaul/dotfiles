@@ -46,6 +46,8 @@ brew_install emscripten binaryen
 brew_install ffmpeg imagemagick youtube-dl cmatrix
 ## rust
 brew_install rust
+## Digital Ocean
+brew_install doctl
 
 #
 # casks
