@@ -10,7 +10,7 @@ brew_install() {
 
 brew_cask() {
     for i
-       do [[ `brew list --cask | grep $i` ]] || brew cask install $i
+       do [[ `brew list --cask | grep $i` ]] || brew install --cask $i
     done
 }
 
@@ -68,6 +68,7 @@ brew_cask balenaetcher
 brew_cask hey
 brew_cask tor-browser
 brew_cask docker
+brew_cask discord
 
 #
 # fonts
