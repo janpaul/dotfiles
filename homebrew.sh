@@ -20,7 +20,7 @@ brew_start() {
 }
 
 ## core
-brew_install git zsh tmux vim kakoune
+brew_install git zsh tmux vim kakoune tree
 ## utilities
 brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta unrar diff-so-fancy bat ripgrep fd fzf gh
 ## server shizzle
@@ -40,7 +40,7 @@ brew_install rbenv
 ### Swift
 brew_install swiftformat swiftlint
 ### C / C++
-brew_install global cmake boost
+brew_install global cmake boost nasm
 ### Wasm
 brew_install emscripten binaryen
 ## images, video, ...
@@ -63,13 +63,11 @@ brew_cask scummvm steam shadow-beta
 brew_cask blender
 brew_cask anaconda miniconda
 brew_cask protonvpn openvpn-connect
-brew_cask parallels
 brew_cask screen
 brew_cask balenaetcher
 brew_cask hey
 brew_cask tor-browser
 brew_cask docker
-brew_cask discord
 
 #
 # fonts
