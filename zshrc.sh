@@ -129,9 +129,11 @@ AGKOZAK_COLORS_BRANCH_STATUS=yellow
 
 #
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-alias j15="export JAVA_HOME=`/usr/libexec/java_home -v 15`; java -version"
-alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
+jdk() {
+        version=$1
+        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+}
+jdk 11
 
 # Completely block all autocorrect
 unsetopt correct_all
