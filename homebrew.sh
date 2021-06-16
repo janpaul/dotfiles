@@ -22,7 +22,7 @@ brew_start() {
 ## core
 brew_install git zsh tmux vim kakoune tree
 ## utilities
-brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta unrar diff-so-fancy bat ripgrep fd fzf gh
+brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat ripgrep fd fzf gh
 ## server shizzle
 brew_install redis nginx postgresql sqlite
 ## programming languages and support
@@ -57,13 +57,11 @@ brew_cask visual-studio-code intellij-idea clion
 brew_cask signal
 brew_cask slack
 brew_cask tower transmit github
-brew_cask google-chrome
+brew_cask google-chrome firefox
 brew_cask iina transmission handbrake plex
 brew_cask scummvm steam shadow-beta
 brew_cask blender
-brew_cask anaconda miniconda
 brew_cask protonvpn openvpn-connect
-brew_cask screen
 brew_cask balenaetcher
 brew_cask hey
 brew_cask tor-browser
@@ -77,3 +75,5 @@ brew_cask font-hack font-jetbrains-mono
 # 
 # Java
 brew tap adoptopenjdk/openjdk
+brew_cask adoptopenjdk11
+brew_cask adoptopenjdk16
