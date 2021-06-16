@@ -43,9 +43,8 @@ function update() {
     tldr --update
     rustup update
     nvm install 8 # MDP @ DHL
-    nvm install 12 # LTS
     nvm install 14 # Latest
-    nvm install 15
+    nvm install 16
 }
 
 #
