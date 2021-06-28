@@ -45,8 +45,6 @@ brew_install global cmake boost nasm
 brew_install emscripten binaryen
 ## images, video, ...
 brew_install ffmpeg imagemagick youtube-dl cmatrix
-## rust
-brew_install rust
 ## Digital Ocean
 brew_install doctl
 

@@ -29,6 +29,10 @@ if [ ! -d ~/.oh-my-zsh ]; then
 fi
 
 #
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+#
 # install rupa/z
 RUPAZ=/usr/local/bin/z.sh
 curl "https://raw.githubusercontent.com/rupa/z/master/z.sh" > $RUPAZ

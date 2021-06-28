@@ -118,6 +118,7 @@ export HOMEBREW_INSTALL_CLEANUP=true
 
 # Rust
 PATH=$PATH:~/.cargo/bin
+source $HOME/.cargo/env
 
 # configure the prompt
 AGKOZAK_MULTILINE=0
