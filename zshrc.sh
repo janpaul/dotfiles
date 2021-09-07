@@ -19,7 +19,7 @@ export UPDATE_ZSH_DAYS=13
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(brew docker git gitignore github gitignore history rust node npm osx tmux vscode xcode yarn vscode)
+plugins=(brew docker git gitignore github gitignore history rust node npm osx tmux vscode xcode yarn vscode nvm)
 source $ZSH/oh-my-zsh.sh
 
 export ARCHFLAGS="-arch x86_64"
@@ -151,3 +151,5 @@ export EMAIL=janpaul@elidon.net
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/janpaul/.sdkman"
 [[ -s "/Users/janpaul/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/janpaul/.sdkman/bin/sdkman-init.sh"
+
+true
