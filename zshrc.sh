@@ -42,7 +42,6 @@ function update() {
     brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
-    nvm install 8 # MDP @ DHL
     nvm install 14 # Latest
     nvm install 16
 }
