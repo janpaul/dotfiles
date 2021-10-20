@@ -52,17 +52,12 @@ brew_install doctl
 # casks
 brew_cask iterm2
 brew_cask visual-studio-code intellij-idea clion
-brew_cask signal
 brew_cask slack
 brew_cask tower transmit github
-brew_cask google-chrome firefox
+brew_cask google-chrome firefox tor-browser
 brew_cask iina transmission handbrake plex
-brew_cask scummvm steam shadow-beta
-brew_cask blender
+brew_cask scummvm
 brew_cask protonvpn openvpn-connect
-brew_cask balenaetcher
-brew_cask hey
-brew_cask tor-browser
 brew_cask docker
 
 #
