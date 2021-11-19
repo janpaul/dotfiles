@@ -19,7 +19,7 @@ export UPDATE_ZSH_DAYS=13
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(brew docker git gitignore github gitignore history rust node npm osx tmux vscode xcode yarn vscode nvm)
+plugins=(brew docker git gitignore github gitignore history rust node npm macos tmux vscode xcode yarn vscode nvm)
 source $ZSH/oh-my-zsh.sh
 
 export ARCHFLAGS="-arch x86_64"
@@ -119,13 +119,6 @@ export HOMEBREW_INSTALL_CLEANUP=true
 PATH=$PATH:~/.cargo/bin
 source $HOME/.cargo/env
 
-# configure the prompt
-AGKOZAK_MULTILINE=0
-AGKOZAK_COLORS_EXIT_STATUS=red
-AGKOZAK_COLORS_USER_HOST=green
-AGKOZAK_COLORS_PATH=blue
-AGKOZAK_COLORS_BRANCH_STATUS=yellow
-
 #
 # Java
 jdk() {
@@ -137,6 +130,10 @@ jdk 11
 # Completely block all autocorrect
 unsetopt correct_all
 unsetopt correct
+
+#
+# Agkozak customization
+AGKOZAK_PROMPT_DIRTRIM_STRING=$'\u2026'
 
 # export shizzle
 export PATH
