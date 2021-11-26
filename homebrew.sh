@@ -57,7 +57,7 @@ brew_cask tower transmit github
 brew_cask google-chrome firefox tor-browser
 brew_cask iina transmission handbrake plex
 brew_cask scummvm
-brew_cask protonvpn openvpn-connect
+brew_cask protonvpn
 brew_cask docker
 
 #
