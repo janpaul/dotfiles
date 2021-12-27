@@ -44,9 +44,9 @@ brew_install global cmake boost nasm
 ### Wasm
 brew_install emscripten binaryen
 ## images, video, ...
-brew_install ffmpeg imagemagick youtube-dl cmatrix
+brew_install ffmpeg imagemagick youtube-dl cmatrix atomicparsley
 ## Digital Ocean
-brew_install doctl
+brew_install doctl s3cmd
 
 #
 # casks
