@@ -3,6 +3,7 @@
 *.iml
 .vscode
 .nova
+.fleet
 
 # Mac shizzle
 .DS_Store
