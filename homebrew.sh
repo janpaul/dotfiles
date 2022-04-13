@@ -28,7 +28,7 @@ brew_install redis nginx postgresql sqlite
 ## programming languages and support
 brew_install ksdiff neovim
 ### Node
-brew_install node yarn
+brew_install node yarn pnpm
 ### Haskell
 brew_install ghc cabal-install
 ### Python
@@ -40,7 +40,7 @@ brew_install rbenv
 ### Swift
 brew_install swiftformat swiftlint
 ### C / C++
-brew_install global cmake boost nasm
+brew_install global cmake boost nasm vcpkg folly
 ### Wasm
 brew_install emscripten binaryen
 ## images, video, ...
