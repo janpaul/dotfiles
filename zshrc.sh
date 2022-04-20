@@ -42,8 +42,9 @@ function update() {
     brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
-    nvm install 14 # Latest
+    nvm install 14
     nvm install 16
+    nvm install 18
 }
 
 #
@@ -118,6 +119,9 @@ export HOMEBREW_INSTALL_CLEANUP=true
 # Rust
 PATH=$PATH:~/.cargo/bin
 source $HOME/.cargo/env
+
+# C / C++
+export VCPKG_ROOT="$HOME/Applications/vcpkg"
 
 #
 # Java
