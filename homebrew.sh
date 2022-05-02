@@ -43,10 +43,12 @@ brew_install swiftformat swiftlint
 brew_install global cmake boost nasm vcpkg folly
 ### Wasm
 brew_install emscripten binaryen
-## images, video, ...
+### images, video, ...
 brew_install ffmpeg imagemagick youtube-dl cmatrix atomicparsley
-## Digital Ocean
+### Digital Ocean
 brew_install doctl s3cmd
+### 6502
+brew_install cc65
 
 #
 # casks
