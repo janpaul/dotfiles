@@ -38,7 +38,7 @@ PG_HOME=/usr/local/opt/postgresql
 
 #
 # update
-function update() {
+function ,update() {
     brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
@@ -145,7 +145,7 @@ export LDFLAGS
 export CPPFLAGS
 export PKG_CONFIG_PATH
 export EDITOR=vim
-export EMAIL=janpaul@elidon.net
+export EMAIL=janpaul@hey.com
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
