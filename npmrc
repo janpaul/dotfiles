@@ -5,3 +5,5 @@ loglevel=notice
 package-lock=true
 production=false
 save=true
+include[]=dev
+legacy-peer-deps=true
