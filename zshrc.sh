@@ -153,3 +153,10 @@ export SDKMAN_DIR="/Users/janpaul/.sdkman"
 [[ -s "/Users/janpaul/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/janpaul/.sdkman/bin/sdkman-init.sh"
 
 true
+
+# bun completions
+[ -s "/Users/janpaul/.bun/_bun" ] && source "/Users/janpaul/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/janpaul/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
