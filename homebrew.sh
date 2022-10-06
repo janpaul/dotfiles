@@ -44,7 +44,7 @@ brew_install global cmake boost nasm vcpkg folly
 ### Wasm
 brew_install emscripten binaryen
 ### images, video, ...
-brew_install ffmpeg imagemagick youtube-dl cmatrix atomicparsley
+brew_install ffmpeg imagemagick youtube-dl yt-dlp cmatrix atomicparsley
 ### Digital Ocean
 brew_install doctl s3cmd
 ### 6502
