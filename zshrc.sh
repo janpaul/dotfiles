@@ -42,9 +42,9 @@ function ,update() {
     brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
-    nvm install 14
     nvm install 16
     nvm install 18
+    nvm install 19
 }
 
 #
@@ -138,6 +138,10 @@ unsetopt correct
 #
 # Agkozak customization
 AGKOZAK_PROMPT_DIRTRIM_STRING=$'\u2026'
+
+# JetBrains Toolbox
+TOOLBOX_HOME="~/Library/Application Support/JetBrains/Toolbox"
+PATH=$PATH:$TOOLBOX_HOME/scripts
 
 # export shizzle
 export PATH
