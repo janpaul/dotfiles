@@ -52,7 +52,7 @@ brew_install cc65
 
 #
 # casks
-brew_cask iterm2
+brew_cask warp iterm2 
 brew_cask visual-studio-code intellij-idea clion
 brew_cask slack
 brew_cask tower transmit github
@@ -66,6 +66,7 @@ brew_cask docker
 # fonts
 brew tap homebrew/cask-fonts
 brew_cask font-hack font-jetbrains-mono
+brew_cask font-jetbrains-mono-nerd-font
 
 # 
 # Java

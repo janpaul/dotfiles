@@ -1,4 +1,5 @@
-#!/usr/local/bin/zsh
+#!/opt/homebrew/bin/zsh
+
 LC_ALL=nl_NL.UTF-8
 LANG=nl_NL.UTF-8
 export LC_ALL LANG
@@ -6,161 +7,31 @@ export LC_ALL LANG
 # zsh
 autoload zmv
 
-#
-# Homebrew
-[[ -d ~/.linuxbrew ]] && eval $(~/.linuxbrew/bin/brew shellenv)
-[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
+DOTFILES=~/code/dotfiles
+[[ -f $DOTFILES/zsh/homebrew.zsh ]] && source $DOTFILES/zsh/homebrew.zsh
+[[ -f $DOTFILES/zsh/oh-my.zsh ]] && source $DOTFILES/zsh/oh-my.zsh
+[[ -f $DOTFILES/zsh/ssh.zsh ]] && source $DOTFILES/zsh/ssh.zsh
+[[ -f $DOTFILES/zsh/postgres.zsh ]] && source $DOTFILES/zsh/postgres.zsh
+[[ -f $DOTFILES/zsh/node.zsh ]] && source $DOTFILES/zsh/node.zsh
+[[ -f $DOTFILES/zsh/python.zsh ]] && source $DOTFILES/zsh/python.zsh
+[[ -f $DOTFILES/zsh/rust.zsh ]] && source $DOTFILES/zsh/rust.zsh
+[[ -f $DOTFILES/zsh/cpp.zsh ]] && source $DOTFILES/zsh/cpp.zsh
+[[ -f $DOTFILES/zsh/jetbrains.zsh ]] && source $DOTFILES/zsh/jetbrains.zsh
+[[ -f $DOTFILES/zsh/java.zsh ]] && source $DOTFILES/zsh/java.zsh
 
-# oh-my-zsh
-export ZSH=~/.oh-my-zsh
-ZSH_THEME="agkozak"
-HISTSIZE=99999
-export UPDATE_ZSH_DAYS=13
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(brew docker git gitignore github gitignore history rust node npm macos tmux vscode xcode yarn vscode nvm thefuck scala)
-source $ZSH/oh-my-zsh.sh
-
-export ARCHFLAGS="-arch x86_64"
-
-#
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-LDFLAGS="-L/usr/local/opt/libxml2/lib $LDFLAGS"
-CPPFLAGS="-I/usr/local/opt/libxml2/include $CPPFLAGS"
-
-#
-# postgresql
-PG_HOME=/usr/local/opt/postgresql
-[[ -d $PG_HOME ]] && PATH="${PATH}:${PG_HOME}/bin"
-
-#
-# update
-function ,update() {
-    brew update && brew upgrade && brew upgrade --cask && brew cleanup
-    tldr --update
-    rustup update
-    nvm install 16
-    nvm install 18
-    nvm install 19
-}
-
-#
-# node
-export NVM_DIR=~/.nvm
-#
-nvm() {
-    unset -f nvm
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-    nvm "$@"
-}
-node() {
-    unset -f node
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-    node "$@"
-}
-npm() {
-    unset -f npm
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-    npm "$@"
-}
-
-#
-# python
-alias python="python3"
-alias pip="pip3"
-
-#
-# git
-alias pushm="git push origin master"
-alias pushd="git push origin development"
-alias pullm="git fetch origin && git merge origin/master"
-alias pulld="git fetch origin && git merge origin/development"
-
-# uses homebrew's version of curl
-PATH="/usr/local/opt/curl/bin:$PATH"
-LDFLAGS="-L/usr/local/opt/curl/lib $LDFLAGS"
-CPPFLAGS="-I/usr/local/opt/curl/include $CPPFLAGS"
-
-# The Fuck
-eval $(thefuck --alias)
-
-# Flutter
-[[ -d /usr/local/flutter ]] && PATH=$PATH:/usr/local/flutter/bin
-
-# Prefer exa
-[[ -x /usr/local/bin/exa ]] && alias ls="exa"
-
-#
-# rupa/z
-RUPAZ=/usr/local/bin/z.sh
-[[ -x $RUPAZ ]] && . $RUPAZ
-
-#
-# diff-so-fancy
-alias diff="diff-so-fancy"
-
-# 
-# bat
-alias cat="bat"
-
-# 
-# fzf
-alias fzf="fzf --preview=\"bat {}\""
-
-# Homebrew
-export HOMEBREW_INSTALL_CLEANUP=true
-
-# Rust
-PATH=$PATH:~/.cargo/bin
-source $HOME/.cargo/env
-
-# C / C++
-export VCPKG_ROOT="$HOME/Applications/vcpkg"
-
-#
-# Java
-jdk() {
-        version=$1
-        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-}
-jdk 11
+[[ -f $DOTFILES/zsh/functions.zsh ]] && source $DOTFILES/zsh/functions.zsh
+[[ -f $DOTFILES/zsh/alias.zsh ]] && source $DOTFILES/zsh/alias.zsh
 
 # Completely block all autocorrect
 unsetopt correct_all
 unsetopt correct
 
-#
-# Agkozak customization
-AGKOZAK_PROMPT_DIRTRIM_STRING=$'\u2026'
-
-# JetBrains Toolbox
-TOOLBOX_HOME="~/Library/Application Support/JetBrains/Toolbox"
-PATH=$PATH:$TOOLBOX_HOME/scripts
-
 # export shizzle
 export PATH
 export LDFLAGS
 export CPPFLAGS
-export PKG_CONFIG_PATH
-export EDITOR=vim
+export EDITOR=fleet
 export EMAIL=janpaul@hey.com
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/janpaul/.sdkman"
-[[ -s "/Users/janpaul/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/janpaul/.sdkman/bin/sdkman-init.sh"
-
-true
-
-# bun completions
-[ -s "/Users/janpaul/.bun/_bun" ] && source "/Users/janpaul/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/Users/janpaul/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# Run starship
+eval "$(starship init zsh)"
