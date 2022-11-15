@@ -82,17 +82,6 @@ link $(pwd)/tmux.conf ~/.tmux.conf
 link $(pwd)/npmrc ~/.npmrc
 
 #
-# gradle
-mkdir -p ~/.gradle
-link $(pwd)/gradle.properties ~/.gradle/gradle.properties
-link $(pwd)/init.gradle ~/.gradle/init.gradle
-
-#
-# maven
-mkdir -p ~/.m2
-link $(pwd)/maven-settings.xml ~/.m2/settings.xml
-
-#
 # haskell
 link $(pwd)/ghci ~/.ghci
 
