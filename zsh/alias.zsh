@@ -1,8 +1,8 @@
 # The Fuck
 eval $(thefuck --alias)
 
-# Prefer exa
-[[ -x /opt/homebrew/bin/exa ]] && alias ls="exa"
+# Prefer LSDelux
+alias ls="lsd"
 
 #
 # diff-so-fancy
