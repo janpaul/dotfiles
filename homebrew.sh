@@ -44,11 +44,10 @@ brew_install global cmake boost nasm vcpkg folly
 ### Wasm
 brew_install emscripten binaryen
 ### images, video, ...
-brew_install ffmpeg imagemagick youtube-dl yt-dlp cmatrix atomicparsley
-### Digital Ocean
-brew_install doctl s3cmd
+brew_install ffmpeg imagemagick yt-dlp cmatrix atomicparsley
 ### 6502
 brew_install cc65
+brew_install osmosis
 
 #
 # casks
