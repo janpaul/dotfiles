@@ -4,9 +4,9 @@ function ,update() {
     brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
-    nvm install 16
-    nvm install 18
+    #nvm install 18
     nvm install 19
+    nvm install 20
 }
 
 #
