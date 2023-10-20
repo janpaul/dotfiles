@@ -2,23 +2,8 @@
 add_newline = false
 scan_timeout = 60
 
-format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_commit\
-$git_status\
-$deno\
-$c\
-$cmake\
-$rust\
-$nodejs\
-$java\
-$package\
-$battery\
-$character\
-"""
+format = """$directory$status$character"""
+right_format = """$time$c$cmake$rust$bun$nodejs$package$git_branch$git_status$git_metrics$battery"""
 
 [[battery.display]]
 threshold = 50 
@@ -28,15 +13,30 @@ style = "bold red"
 show_always = true
 
 [directory]
+truncation_length = 4
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"~/code/dhl" = "📦 " 
+"~/code/janpaul" = "🧑🏻‍💻 "
+"~" = "🏡 "
 
 [git_branch]
+symbol = "🌱"
+
+[git_metrics]
+disabled = false
 
 [package]
-
+display_private = true
 
 [character]
 success_symbol = "[➜](bold green) "
 error_symbol = "[✗](bold red) "
 
 [line_break]
-disabled = true
+disabled = false
+
+[time]
+format = "⌚️[$time]($style)"
+disabled = false

@@ -9,7 +9,7 @@ export NVM_DIR=~/.nvm
 nvm "$@"
 }
 
-nvm use 18
+nvm use 18.18.2
 
 #
 # bun

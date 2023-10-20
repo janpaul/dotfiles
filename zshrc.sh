@@ -17,8 +17,6 @@ DOTFILES=~/code/dotfiles
 [[ -f $DOTFILES/zsh/rust.zsh ]] && source $DOTFILES/zsh/rust.zsh
 [[ -f $DOTFILES/zsh/cpp.zsh ]] && source $DOTFILES/zsh/cpp.zsh
 [[ -f $DOTFILES/zsh/jetbrains.zsh ]] && source $DOTFILES/zsh/jetbrains.zsh
-[[ -f $DOTFILES/zsh/java.zsh ]] && source $DOTFILES/zsh/java.zsh
-
 [[ -f $DOTFILES/zsh/functions.zsh ]] && source $DOTFILES/zsh/functions.zsh
 [[ -f $DOTFILES/zsh/alias.zsh ]] && source $DOTFILES/zsh/alias.zsh
 
@@ -37,11 +35,15 @@ export EMAIL=janpaul@hey.com
 eval "$(starship init zsh)"
 
 # pnpm
-export PNPM_HOME="/Users/janpaul/Library/pnpm"
+if [[ $(uname) == "Linux" ]]; then
+  PNPM_HOME="~/.local/share/pnpm"
+else
+  PNPM_HOME="~/Library/pnpm"
+fi
+export PNPM_HOME
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-# bun completions
-[ -s "/Users/janpaul/.bun/_bun" ] && source "/Users/janpaul/.bun/_bun"
+

@@ -21,3 +21,7 @@ alias pulld="git fetch origin && git merge origin/development"
 function ,yt() {
     yt-dlp --extract-audio --audio-format mp3 --embed-thumbnail -o "%(title)s %(upload_date)s.mp3" "$@"
 }
+
+#
+# Oh My Zsh
+#omz update
