@@ -1,7 +1,7 @@
 #!/opt/homebrew/bin/zsh
 
-LC_ALL=en_EN.UTF-8
-LANG=en_EN.UTF-8
+LC_ALL=nl_NL.UTF-8
+LANG=nl_NL.UTF-8
 export LC_ALL LANG
 
 # zsh
