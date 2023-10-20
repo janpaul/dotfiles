@@ -9,8 +9,6 @@ nvm() {
   nvm "$@"
 }
 
-nvm use 20
-
 #
 # bun
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"

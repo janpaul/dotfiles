@@ -10,7 +10,7 @@ alias lt='lsd --tree'
 
 #
 # diff-so-fancy
-alias diff="diff-so-fancy"
+[[ $(uname) == "Darwin" ]] && alias diff="diff-so-fancy"
 
 #
 # bat
