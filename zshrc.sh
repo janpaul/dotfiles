@@ -17,7 +17,6 @@ DOTFILES=~/code/dotfiles
 [[ -f $DOTFILES/zsh/rust.zsh ]] && source $DOTFILES/zsh/rust.zsh
 [[ -f $DOTFILES/zsh/cpp.zsh ]] && source $DOTFILES/zsh/cpp.zsh
 [[ -f $DOTFILES/zsh/jetbrains.zsh ]] && source $DOTFILES/zsh/jetbrains.zsh
-[[ -f $DOTFILES/zsh/java.zsh ]] && source $DOTFILES/zsh/java.zsh
 
 [[ -f $DOTFILES/zsh/functions.zsh ]] && source $DOTFILES/zsh/functions.zsh
 [[ -f $DOTFILES/zsh/alias.zsh ]] && source $DOTFILES/zsh/alias.zsh
@@ -35,3 +34,11 @@ export EMAIL=janpaul@hey.com
 
 # Run starship
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/janpaul/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
