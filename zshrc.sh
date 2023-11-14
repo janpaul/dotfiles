@@ -33,17 +33,3 @@ export EMAIL=janpaul@hey.com
 
 # Run starship
 eval "$(starship init zsh)"
-
-# pnpm
-if [[ $(uname) == "Linux" ]]; then
-  PNPM_HOME="~/.local/share/pnpm"
-else
-  PNPM_HOME="~/Library/pnpm"
-fi
-export PNPM_HOME
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
