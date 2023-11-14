@@ -22,7 +22,7 @@ brew_start() {
 ## core
 brew_install git zsh tmux vim kakoune tree
 ## utilities
-brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat ripgrep fd fzf gh ripgrep neofetch netcat lsd
+brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat ripgrep fd fzf gh ripgrep neofetch netcat lsd sl
 ## server shizzle
 brew_install redis nginx postgresql sqlite
 ## programming languages and support
