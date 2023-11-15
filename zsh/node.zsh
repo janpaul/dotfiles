@@ -14,3 +14,8 @@ nvm() {
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 export BUN_INSTALL="~/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+#
+# pnpm
+export PNPM_HOME="/Users/janpaul/Library/pnpm"
+export PATH="$PATH:$PNPM_HOME"
