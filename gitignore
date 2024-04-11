@@ -27,7 +27,17 @@ yarn-error.log
 # temporary files
 *.tmp
 
+# Environment
+.env
+.env.local
+
 # Dropbox settings and caches
 .dropbox
 .dropbox.attr
 .dropbox.cache
+
+# Bazel garbage
+bazel-bin
+bazel-frontend
+bazel-out
+bazel-testlogs

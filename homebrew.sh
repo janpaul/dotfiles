@@ -22,7 +22,7 @@ brew_start() {
 ## core
 brew_install git zsh tmux vim kakoune tree
 ## utilities
-brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat ripgrep fd fzf gh ripgrep neofetch netcat lsd sl
+brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat ripgrep fd fzf gh ripgrep neofetch netcat lsd
 ## server shizzle
 brew_install redis nginx postgresql sqlite
 ## programming languages and support
@@ -44,10 +44,12 @@ brew_install global cmake boost nasm vcpkg folly
 ### Wasm
 brew_install emscripten binaryen
 ### images, video, ...
-brew_install ffmpeg imagemagick yt-dlp cmatrix atomicparsley
+brew_install ffmpeg imagemagick yt-dlp atomicparsley
 ### 6502
 brew_install cc65
 brew_install osmosis
+### Funny stuff
+brew_install cmatrix lolcat nyancat sl
 
 #
 # casks

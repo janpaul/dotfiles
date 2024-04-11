@@ -20,6 +20,10 @@ DOTFILES=~/code/dotfiles
 [[ -f $DOTFILES/zsh/functions.zsh ]] && source $DOTFILES/zsh/functions.zsh
 [[ -f $DOTFILES/zsh/alias.zsh ]] && source $DOTFILES/zsh/alias.zsh
 
+#
+# Local overrides
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
 # Completely block all autocorrect
 unsetopt correct_all
 unsetopt correct
@@ -33,3 +37,11 @@ export EMAIL=janpaul@hey.com
 
 # Run starship
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/janpaul/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

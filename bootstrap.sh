@@ -1,8 +1,8 @@
 #!/bin/zsh
 #
 
-NODE_STABLE=16
-NODE_LATEST=18
+NODE_STABLE=20
+NODE_LATEST=21
 
 if [ $(id -u) -eq 0 ]; then
     echo "don't run this script as root or under sudo. It can and will mess up your homedir."
