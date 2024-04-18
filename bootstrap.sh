@@ -19,37 +19,8 @@ link() {
 [[ ! -d /usr/local/Homebrew ]] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #
-# install oh-my-zsh
-if [ ! -d ~/.oh-my-zsh ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    THEME_CUSTOM=~/.oh-my-zsh/custom
-    [[ ! -d $THEME_CUSTOM/themes ]] && mkdir -p $THEME_CUSTOM/themes
-    git clone https://github.com/agkozak/agkozak-zsh-prompt $THEME_CUSTOM/themes/agkozak
-    ln -s $THEME_CUSTOM/themes/agkozak/agkozak-zsh-prompt.plugin.zsh $THEME_CUSTOM/themes/agkozak.zsh-theme
-fi
-
-#
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-#
-# install rupa/z
-RUPAZ=/usr/local/bin/z.sh
-curl "https://raw.githubusercontent.com/rupa/z/master/z.sh" > $RUPAZ
-[[ -f $RUPAZ ]] && chmod +x $RUPAZ
-
-#
-# pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-PATHOGEN=~/.vim/bundle
-mkdir -p $PATHOGEN
-mkdir -p ~/.cache/vim
-git clone https://github.com/kien/rainbow_parentheses.vim $PATHOGEN
-git clone https://github.com/vim-airline/vim-airline $PATHOGEN
-git clone https://github.com/airblade/vim-gitgutter $PATHOGEN
-git clone https://github.com/pangloss/vim-javascript $PATHOGEN
-link $(pwd)/vimrc ~/.vimrc
 
 #
 # install nvm
