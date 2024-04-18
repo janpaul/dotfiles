@@ -13,10 +13,6 @@ LC_ALL=nl_NL.UTF-8
 LANG=nl_NL.UTF-8
 export LC_ALL LANG
 
-source $HOMEBREW/share/powerlevel10k/powerlevel10k.zsh-theme
-source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 alias ls='lsd'
 alias l='lsd -l'
 alias la='lsd -a'
@@ -24,6 +20,7 @@ alias lla='lsd -la'
 alias lt='lsd --tree'
 alias diff="diff-so-fancy"
 alias cat="bat"
+alias cd="z"
 eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
@@ -42,7 +39,6 @@ nvm() {
 }
 export BUN_INSTALL="~/.bun"
 export PNPM_HOME="/Users/janpaul/Library/pnpm"
-export PATH=$PATH:$PNPM_HOME:$BUN_INSTALL/bin
 # /node
 
 #
@@ -63,10 +59,10 @@ export TOOLBOX_HOME="~/Library/Application Support/JetBrains/Toolbox"
 #
 # update
 function ,update() {
-    [[ $(uname) == "Darwin" ]] && brew update && brew upgrade | lolcat -t && brew upgrade --cask | lolcat -t && brew cleanup
-    tldr --update | lolcat -t
-    rustup update | lolcat -t
-    nvm install 20 | lolcat -t
+    [[ $(uname) == "Darwin" ]] && brew update && brew upgrade && brew upgrade --cask -t && brew cleanup
+    tldr --update
+    rustup update
+    nvm install 20
 }
 
 #
@@ -99,7 +95,7 @@ export HOMEBREW=/opt/homebrew
 
 LDFLAGS="-L${HOMEBREW}/opt/libxml2/lib -L${HOMEBREW}/opt/curl/lib ${LDFLAGS}"
 CPPFLAGS="-I${HOMEBREW}/opt/libxml2/include -I${HOMEBREW}/opt/curl/include ${CPPFLAGS}"
-PATH="${HOMEBREW}/opt/curl/bin:$PATH:$TOOLBOX_HOME/scripts"
+PATH="${HOMEBREW}/opt/curl/bin:$PATH:$TOOLBOX_HOME/scripts:$PNPM_HOME:$BUN_INSTALL/bin"
 
 #
 # Completely block all autocorrect
@@ -112,5 +108,11 @@ export CPPFLAGS
 export EDITOR=vim
 export EMAIL=janpaul@hey.com
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/code/dotfiles/p10k.zsh ]] || source ~/code/dotfiles/p10k.zsh
+export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
+autoload -Uz compinit
+compinit
+
+source $HOMEBREW/share/powerlevel10k/powerlevel10k.zsh-theme
+source ~/code/dotfiles/p10k.zsh
+source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
