@@ -21,6 +21,7 @@ alias lt='lsd --tree'
 alias diff="diff-so-fancy"
 alias cat="bat"
 alias cd="z"
+
 eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
@@ -59,7 +60,7 @@ export TOOLBOX_HOME="~/Library/Application Support/JetBrains/Toolbox"
 #
 # update
 function ,update() {
-    [[ $(uname) == "Darwin" ]] && brew update && brew upgrade && brew upgrade --cask -t && brew cleanup
+    brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
     nvm install 20
@@ -84,6 +85,11 @@ function ,yts() {
 function ,webpjpg {
   find . -name '*.webp' -exec convert {} {}.jpg \; -exec rm -f {} \;
 }
+
+#
+# Neovim
+alias vi="nvim"
+alias vim="nvim"
 
 export PATH
 export LDFLAGS
