@@ -2,7 +2,7 @@
 #
 
 NODE_STABLE=20
-NODE_LATEST=21
+NODE_LATEST=22
 
 if [ $(id -u) -eq 0 ]; then
     echo "don't run this script as root or under sudo. It can and will mess up your homedir."
@@ -68,5 +68,11 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.finder AppleShowAllFiles -bool true
 chflags nohidden ~/Library/
+
+#
+# Neovim
+NEOVIM_CONFIG=~/.config/nvim
+git clone https://github.com/NvChad/starter $NEOVIM_CONFIG
+[[ -d $NEOVIM_CONFIG ]] && rm -rf $NEOVIM_CONFIG/.git
 
 exit 0
