@@ -91,11 +91,6 @@ function ,webpjpg {
 alias vi="nvim"
 alias vim="nvim"
 
-export PATH
-export LDFLAGS
-export CPPFLAGS
-export EDITOR=fleet
-export EMAIL=janpaul@hey.com
 export HOMEBREW=/opt/homebrew
 
 
@@ -111,7 +106,7 @@ unsetopt correct
 export PATH
 export LDFLAGS
 export CPPFLAGS
-export EDITOR=vim
+export EDITOR=nvim
 export EMAIL=janpaul@hey.com
 
 export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
