@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export HOMEBREW=/opt/homebrew
 eval $($HOMEBREW/bin/brew shellenv)
 export HOMEBREW_INSTALL_CLEANUP=true
@@ -113,7 +106,7 @@ export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
 autoload -Uz compinit
 compinit
 
-source $HOMEBREW/share/powerlevel10k/powerlevel10k.zsh-theme
-source ~/code/dotfiles/p10k.zsh
 source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(starship init zsh)"
