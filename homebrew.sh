@@ -55,7 +55,7 @@ brew_install cmatrix lolcat nyancat sl
 
 #
 # casks
-brew_cask warp iterm2 
+brew_cask warp iterm2 ghostty
 brew_cask visual-studio-code intellij-idea clion
 brew_cask slack
 brew_cask tower transmit github
