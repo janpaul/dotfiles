@@ -31,8 +31,9 @@ nvm() {
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
   nvm "$@"
 }
-export BUN_INSTALL="~/.bun"
+export BUN_INSTALL="/Users/janpaul/.bun"
 export PNPM_HOME="/Users/janpaul/Library/pnpm"
+PATH=$PATH:$BUN_INSTALL/bin
 # /node
 
 #
@@ -110,3 +111,6 @@ source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/janpaul/code/dhl/dhl-parcel-mdp-frontend/~/.bun/_bun" ] && source "/Users/janpaul/code/dhl/dhl-parcel-mdp-frontend/~/.bun/_bun"
