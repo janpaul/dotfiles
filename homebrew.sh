@@ -24,9 +24,9 @@ brew_install git zsh tmux vim kakoune tree
 ## zsh
 brew_install zsh-syntax-highlighting powerlevel10k zsh-autosuggestions zsh-completions zoxide fzf starship
 ## utilities
-brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat ripgrep fd gh ripgrep neofetch netcat lsd
+brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat fd gh ripgrep neofetch netcat lsd
 ## server shizzle
-brew_install redis nginx postgresql sqlite
+#brew_install redis nginx postgresql sqlite
 ## programming languages and support
 brew_install ksdiff neovim
 ### Node
@@ -38,7 +38,7 @@ brew_install python
 ### JVM
 brew_install kotlin scala leiningen gradle maven sbt
 ### Ruby
-brew_install rbenv
+#brew_install rbenv
 ### Swift
 brew_install swiftformat swiftlint
 ### C / C++
@@ -62,8 +62,6 @@ brew_cask tower transmit github
 brew_cask google-chrome firefox tor-browser
 brew_cask iina transmission handbrake plex
 brew_cask scummvm
-brew_cask protonvpn
-brew_cask docker
 
 #
 # fonts
