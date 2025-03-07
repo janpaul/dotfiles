@@ -112,5 +112,10 @@ source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(starship init zsh)"
 
-# bun completions
-[ -s "/Users/janpaul/code/dhl/dhl-parcel-mdp-frontend/~/.bun/_bun" ] && source "/Users/janpaul/code/dhl/dhl-parcel-mdp-frontend/~/.bun/_bun"
+# pnpm
+export PNPM_HOME="/Users/janpaul/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
