@@ -68,9 +68,3 @@ brew_cask scummvm
 brew tap homebrew/cask-fonts
 brew_cask font-hack font-jetbrains-mono
 brew_cask font-jetbrains-mono-nerd-font
-
-# 
-# Java
-brew tap adoptopenjdk/openjdk
-brew_cask adoptopenjdk11
-brew_cask adoptopenjdk16
