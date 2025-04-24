@@ -41,3 +41,6 @@ bazel-bin
 bazel-frontend
 bazel-out
 bazel-testlogs
+
+#
+.npmrc
