@@ -83,6 +83,19 @@ function ,webpjpg {
 }
 
 #
+# convert flac to aiff
+function ,flacaiff {
+  # converts flac to aiff
+  find . -name '*.flac' -exec ffmpeg -i {} -c:a pcm_s16be "{}.aiff" \;
+  # renames all .flac.aiff files to .aiff
+  for f in *.flac.aiff; do mv -- "$f" "${f%.flac.aiff}.aiff"; done
+  # remove flac files
+  rm -f *.flac
+  # for files starting with a number, remove the number
+  for f in *.aiff; do mv -- "$f" "$(echo "$f" | sed -E 's/^[0-9]+\. //')"; done
+}
+
+#
 # Neovim
 alias vi="nvim"
 alias vim="nvim"
