@@ -4,6 +4,8 @@
 .vscode
 .nova
 .fleet
+# IntellIJ With Bazel
+.ijwb
 
 # Mac shizzle
 .DS_Store
