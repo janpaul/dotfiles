@@ -95,6 +95,44 @@ function ,flacaiff {
   for f in *.aiff; do mv -- "$f" "$(echo "$f" | sed -E 's/^[0-9]+\. //')"; done
 }
 
+function ,m4a2movie {
+  ffmpeg -loop 1 -i ~/Documents/amsterdam.png -i "$@" -c:v libx264 -c:a aac -b:a 192k -shortest -pix_fmt yuv420p "$@".mp4
+}
+
+function ,backupmusic {
+  SOURCE="$HOME/Documents/AIFF/"
+  DEST="/Volumes/Extreme SSD/AIFF/"
+  echo "🔍 Checking if all files are downloaded"
+  brctl download --recursive "$SOURCE"
+  sleep 5
+  rsync -avh \
+    --progress \
+    --delete \
+    --exclude=".DS_Store" \
+    --exclude="._*" \
+    --exclude=".Trashes" \
+    "$SOURCE" "$DEST"
+  echo "✅ Rekordbox music backup done"
+}
+
+function ,backupimages {
+  SOURCE="$HOME/Documents/images/"
+  DEST="/Volumes/Extreme SSD/images/"
+  echo "🔍 Checking if all files are downloaded"
+  brctl download --recursive "$SOURCE"
+  sleep 5
+  echo ""
+  echo "🛫 Starting backup through rsync"
+  rsync -avh \
+    --progress \
+    --delete \
+    --exclude=".DS_Store" \
+    --exclude="._*" \
+    --exclude=".Trashes" \
+    "$SOURCE" "$DEST"
+  echo "✅ images backup voltooid"
+}
+
 #
 # Neovim
 alias vi="nvim"
