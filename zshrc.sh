@@ -78,15 +78,15 @@ function ,ytl() {
 
 #
 # convert .webp to .jpg
-function ,webpjpg {
+function ,webp2jpg {
   find . -name '*.webp' -exec convert {} {}.jpg \; -exec rm -f {} \;
 }
 
 #
 # convert flac to aiff
-function ,flacaiff {
+function ,flac2aiff {
   # converts flac to aiff
-  find . -name '*.flac' -exec ffmpeg -i {} -c:a pcm_s16be "{}.aiff" \;
+  find . -name '*.flac' -exec ffmpeg -i {} -map_metadata 0 -c:a pcm_s16be "{}.aiff" \;
   # renames all .flac.aiff files to .aiff
   for f in *.flac.aiff; do mv -- "$f" "${f%.flac.aiff}.aiff"; done
   # remove flac files
@@ -95,7 +95,13 @@ function ,flacaiff {
   for f in *.aiff; do mv -- "$f" "$(echo "$f" | sed -E 's/^[0-9]+\. //')"; done
 }
 
-function ,m4a2movie {
+# convert wav to m4a (aac)
+function ,wav2m4a {
+  ffmpeg -i "$@" -c:a aac -b:a 256k -ar 44100 "$@.m4a"
+}
+
+# convert wav to a movie suitable for YouTube
+function ,wav2movie {
   ffmpeg -loop 1 -i ~/Documents/amsterdam.png -i "$@" -c:v libx264 -c:a aac -b:a 192k -shortest -pix_fmt yuv420p "$@".mp4
 }
 
