@@ -1,4 +1,12 @@
-export HOMEBREW=/opt/homebrew
+if [[ "$(uname -m)" == "arm64" ]]; then
+  # Apple Silicon 
+  export HOMEBREW=/opt/homebrew
+else
+  # Intel
+  export HOMEBREW=/usr/local
+fi
+
+export HOMEBREW=/usr/local
 eval $($HOMEBREW/bin/brew shellenv)
 export HOMEBREW_INSTALL_CLEANUP=true
 
@@ -144,8 +152,6 @@ function ,backupimages {
 alias vi="nvim"
 alias vim="nvim"
 
-export HOMEBREW=/opt/homebrew
-
 
 LDFLAGS="-L${HOMEBREW}/opt/libxml2/lib -L${HOMEBREW}/opt/curl/lib ${LDFLAGS}"
 CPPFLAGS="-I${HOMEBREW}/opt/libxml2/include -I${HOMEBREW}/opt/curl/include ${CPPFLAGS}"
@@ -160,7 +166,7 @@ export PATH
 export LDFLAGS
 export CPPFLAGS
 export EDITOR=nvim
-export EMAIL=janpaul@hey.com
+export EMAIL=janpaul@elidon.net
 
 export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
 autoload -Uz compinit
