@@ -28,7 +28,7 @@ brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf 
 ## server shizzle
 #brew_install redis nginx postgresql sqlite
 ## programming languages and support
-brew_install ksdiff neovim
+brew_install neovim
 ### Node
 brew_install node yarn pnpm
 ### Haskell
@@ -56,9 +56,9 @@ brew_install cmatrix lolcat nyancat sl
 #
 # casks
 brew_cask warp iterm2 ghostty
-brew_cask visual-studio-code intellij-idea clion
+brew_cask visual-studio-code
 brew_cask slack
-brew_cask tower transmit github
+brew_cask tower transmit 
 brew_cask google-chrome firefox tor-browser
 brew_cask iina transmission handbrake plex
 brew_cask scummvm
