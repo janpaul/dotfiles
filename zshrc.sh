@@ -6,7 +6,6 @@ else
   export HOMEBREW=/usr/local
 fi
 
-export HOMEBREW=/usr/local
 eval $($HOMEBREW/bin/brew shellenv)
 export HOMEBREW_INSTALL_CLEANUP=true
 
