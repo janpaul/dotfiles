@@ -1,6 +1,6 @@
 [user]
 	name = Jan Paul
-	email = janpaul@hey.com
+	email = janpaul@elidon.net
 
 [core]
 	excludesfile = ~/.gitignore
