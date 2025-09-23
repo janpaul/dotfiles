@@ -49,22 +49,34 @@ brew_install emscripten binaryen
 brew_install ffmpeg imagemagick yt-dlp atomicparsley
 ### 6502
 brew_install cc65
+# OSM /maps
 brew_install osmosis
 ### Funny stuff
 brew_install cmatrix lolcat nyancat sl
 
 #
 # casks
-brew_cask warp iterm2 ghostty
-brew_cask visual-studio-code
-brew_cask slack
-brew_cask tower transmit 
-brew_cask google-chrome firefox tor-browser
-brew_cask iina transmission handbrake plex
-brew_cask scummvm
 
-#
-# fonts
+# Terminals
+brew_cask iterm2 warp ghostty
+
+# Communication
+brew_cask slack microsoft-teams
+
+# Media and stuff
+brew_cask transmit
+brew_cask iina transmission handbrak
+
+# Fonts
 brew tap homebrew/cask-fonts
 brew_cask font-hack font-jetbrains-mono
 brew_cask font-jetbrains-mono-nerd-font
+
+# IDE / Development
+brew_cask intellij-idea clion visual-studio-code
+
+# Browsers
+brew_cask google-chrome firefox tor-browser
+
+# Gaming
+brew_cask scummvm
