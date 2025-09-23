@@ -6,7 +6,7 @@ else
   export HOMEBREW=/usr/local
 fi
 
-eval $($HOMEBREW/bin/brew shellenv)
+eval "$($HOMEBREW/bin/brew shellenv)"
 export HOMEBREW_INSTALL_CLEANUP=true
 
 LC_ALL=nl_NL.UTF-8
@@ -22,12 +22,13 @@ alias diff="diff-so-fancy"
 alias cat="bat"
 alias cd="z"
 
-eval $(thefuck --alias)
+eval "$(thefuck --alias)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 
 #
 # Local overrides
+# shellcheck source=/Users/janpaul/.zshrc.local
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 #
@@ -45,15 +46,15 @@ PATH=$PATH:$BUN_INSTALL/bin
 
 #
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 #
 # Rust
 PATH=$PATH:~/.cargo/bin
-source $HOME/.cargo/env
+source "$HOME/.cargo/env"
 
 #
 # JetBrains Toolbox
-export TOOLBOX_HOME="~/Library/Application Support/JetBrains/Toolbox"
+export TOOLBOX_HOME="$HOME/Library/Application Support/JetBrains/Toolbox"
 
 # 
 # Various awesome functions ;-)
@@ -65,11 +66,6 @@ function ,update() {
     rustup update
     nvm install 20
 }
-
-#
-# git
-alias pushm="git push origin main"
-alias pullm="git fetch origin && git merge origin/main"
 
 #
 # yt-dlp
@@ -97,19 +93,19 @@ function ,flac2aiff {
   # renames all .flac.aiff files to .aiff
   for f in *.flac.aiff; do mv -- "$f" "${f%.flac.aiff}.aiff"; done
   # remove flac files
-  rm -f *.flac
+  rm -f ./*.flac
   # for files starting with a number, remove the number
   for f in *.aiff; do mv -- "$f" "$(echo "$f" | sed -E 's/^[0-9]+\. //')"; done
 }
 
 # convert wav to m4a (aac)
 function ,wav2m4a {
-  ffmpeg -i "$@" -c:a aac -b:a 256k -ar 44100 "$@.m4a"
+  ffmpeg -i "$@" -c:a aac -b:a 256k -ar 44100 "$*.m4a"
 }
 
 # convert wav to a movie suitable for YouTube
 function ,wav2movie {
-  ffmpeg -loop 1 -i ~/Documents/amsterdam.png -i "$@" -c:v libx264 -c:a aac -b:a 192k -shortest -pix_fmt yuv420p "$@".mp4
+  ffmpeg -loop 1 -i ~/Documents/amsterdam.png -i "$@" -c:v libx264 -c:a aac -b:a 192k -shortest -pix_fmt yuv420p "$*.mp4"
 }
 
 function ,backupmusic {
@@ -126,24 +122,6 @@ function ,backupmusic {
     --exclude=".Trashes" \
     "$SOURCE" "$DEST"
   echo "✅ Rekordbox music backup done"
-}
-
-function ,backupimages {
-  SOURCE="$HOME/Documents/images/"
-  DEST="/Volumes/Extreme SSD/images/"
-  echo "🔍 Checking if all files are downloaded"
-  brctl download --recursive "$SOURCE"
-  sleep 5
-  echo ""
-  echo "🛫 Starting backup through rsync"
-  rsync -avh \
-    --progress \
-    --delete \
-    --exclude=".DS_Store" \
-    --exclude="._*" \
-    --exclude=".Trashes" \
-    "$SOURCE" "$DEST"
-  echo "✅ images backup voltooid"
 }
 
 #

@@ -4,19 +4,19 @@ BREW_CELLAR="/usr/local/Cellar"
 
 brew_install() {
     for i
-      do [[ ! -d $BREW_CELLAR/$i ]] && brew install $i
+      do [[ ! -d $BREW_CELLAR/$i ]] && brew install "$i"
     done
 }
 
 brew_cask() {
     for i
-       do [[ `brew list --cask | grep $i` ]] || brew install --cask $i
+       do [[ $(brew list --cask | grep "$i") ]] || brew install --cask "$i"
     done
 }
 
 brew_start() {
-    STARTED=`brew services list | grep $1 | awk '{print $2}'`
-    [[ $STARTED = "stopped" ]] && brew services start $1
+    STARTED=$(brew services list | grep "$1" | awk '{print $2}')
+    [[ $STARTED = "stopped" ]] && brew services start "$1"
 }
 
 ## core
