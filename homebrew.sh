@@ -61,7 +61,7 @@ brew_install cmatrix lolcat nyancat sl
 brew_cask iterm2 warp ghostty
 
 # Communication
-brew_cask slack microsoft-teams
+brew_cask slack
 
 # Media and stuff
 brew_cask transmit
