@@ -64,7 +64,7 @@ function ,update() {
     brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
-    nvm install 20
+    nvm install 24 # Install latest minor/patch release of Node
 }
 
 #
@@ -108,7 +108,7 @@ function ,wav2movie {
   ffmpeg -loop 1 -i ~/Documents/amsterdam.png -i "$@" -c:v libx264 -c:a aac -b:a 192k -shortest -pix_fmt yuv420p "$*.mp4"
 }
 
-function ,backupmusic {
+function ,backupMusic {
   SOURCE="$HOME/Documents/AIFF/"
   DEST="/Volumes/Extreme SSD/AIFF/"
   echo "🔍 Checking if all files are downloaded"
@@ -129,9 +129,6 @@ function ,backupmusic {
 alias vi="nvim"
 alias vim="nvim"
 
-
-LDFLAGS="-L${HOMEBREW}/opt/libxml2/lib -L${HOMEBREW}/opt/curl/lib ${LDFLAGS}"
-CPPFLAGS="-I${HOMEBREW}/opt/libxml2/include -I${HOMEBREW}/opt/curl/include ${CPPFLAGS}"
 PATH="${HOMEBREW}/opt/curl/bin:$PATH:$TOOLBOX_HOME/scripts:$PNPM_HOME:$BUN_INSTALL/bin"
 
 #
@@ -140,8 +137,8 @@ unsetopt correct_all
 unsetopt correct
 
 export PATH
-export LDFLAGS
-export CPPFLAGS
+export LDFLAGS="-L${HOMEBREW}/opt/libxml2/lib -L${HOMEBREW}/opt/curl/lib ${LDFLAGS}"
+export CPPFLAGS="-I${HOMEBREW}/opt/libxml2/include -I${HOMEBREW}/opt/curl/include ${CPPFLAGS}"
 export EDITOR=nvim
 export EMAIL=janpaul@elidon.net
 
@@ -152,8 +149,6 @@ compinit
 source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(starship init zsh)"
-
 # pnpm
 export PNPM_HOME="/Users/janpaul/Library/pnpm"
 case ":$PATH:" in
@@ -161,3 +156,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Load the prompt through starship
+eval "$(starship init zsh)"
+
