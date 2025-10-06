@@ -47,6 +47,7 @@ PATH=$PATH:$BUN_INSTALL/bin
 #
 # ssh
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
+
 #
 # Rust
 PATH=$PATH:~/.cargo/bin
@@ -159,4 +160,3 @@ esac
 
 # Load the prompt through starship
 eval "$(starship init zsh)"
-
