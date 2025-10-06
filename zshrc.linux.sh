@@ -40,4 +40,7 @@ function ,update() {
 
 export EMAIL=janpaul@elidon.net
 
+export CCACHE_DIR=~/.ccache
+export PATH="/usr/lib/ccache:$PATH"
+
 eval "$(starship init zsh)"
