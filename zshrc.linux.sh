@@ -1,15 +1,15 @@
-LC_ALL=nl_NL.UTF-8
-LANG=nl_NL.UTF-8
+LC_ALL=en_GB.UTF-8
+LANG=en_GB.UTF-8
 export LC_ALL LANG
+
+export HOMEBREW=/home/linuxbrew/.linuxbrew
 
 alias ls='lsd'
 alias l='lsd -l'
 alias la='lsd -a'
 alias lla='lsd -la'
 
-eval "$(zoxide init zsh)"
-
-#
+#/home/linuxbrew/.linuxbrew
 # Local overrides
 # shellcheck source=/home/janpaul/.zshrc.local
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
@@ -33,6 +33,7 @@ source "$HOME/.cargo/env"
 #
 # update
 function ,update() {
+    brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
     nvm install 24 # Install latest minor/patch release of Node
@@ -43,4 +44,8 @@ export EMAIL=janpaul@elidon.net
 export CCACHE_DIR=~/.ccache
 export PATH="/usr/lib/ccache:$PATH"
 
+eval "$(${HOMEBREW}/bin/brew shellenv)"
+
+eval "$(zoxide init zsh)"
+eval "$(thefuck --alias)"
 eval "$(starship init zsh)"
