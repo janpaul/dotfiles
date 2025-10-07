@@ -33,6 +33,7 @@ source "$HOME/.cargo/env"
 #
 # update
 function ,update() {
+    sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
     brew update && brew upgrade && brew upgrade --cask && brew cleanup
     tldr --update
     rustup update
