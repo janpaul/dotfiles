@@ -17,7 +17,7 @@ brew install python
 ## JVM
 brew install kotlin scala leiningen gradle maven sbt
 ## C / C++
-brew install gcc global cmake boost nasm vcpkg folly
+brew install gcc global cmake boost nasm vcpkg folly flex bison
 ## Wasm
 brew install emscripten binaryen
 ## images, video, ...
