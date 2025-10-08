@@ -39,6 +39,7 @@ function ,update() {
     rustup update
     nvm install 24 # Install latest minor/patch release of Node
 }
+alias ,w='curl http://wttr.in/Amsterdam'
 
 export EMAIL=janpaul@elidon.net
 
