@@ -13,7 +13,6 @@ alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
 
-
 source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

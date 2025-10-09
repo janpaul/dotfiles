@@ -5,8 +5,8 @@ export HOMEBREW=/home/linuxbrew/.linuxbrew
 #
 # update
 function ,update() {
-  ,__updateCommon
   sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+  ,__updateCommon
 }
 
 export CCACHE_DIR=~/.ccache
