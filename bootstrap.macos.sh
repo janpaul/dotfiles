@@ -42,7 +42,7 @@ link $(pwd)/gitignore ~/.gitignore
 
 #
 # zsh
-link $(pwd)/zshrc.sh ~/.zshrc
+link $(pwd)/zshrc.macos.sh ~/.zshrc
 
 #
 # tmux
