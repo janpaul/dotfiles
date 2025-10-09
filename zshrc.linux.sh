@@ -12,5 +12,6 @@ function ,update() {
 export CCACHE_DIR=~/.ccache
 export PATH="/usr/lib/ccache:$PATH"
 
+# shellcheck disable=all
 SCRIPT_DIR=${${(%):-%N}:A:h}
 source "$SCRIPT_DIR/zshrc.common.sh"

@@ -21,7 +21,7 @@ PATH=$PATH:$BUN_INSTALL/bin
 # JetBrains Toolbox
 export TOOLBOX_HOME="$HOME/Library/Application Support/JetBrains/Toolbox"
 
-# 
+#
 # Various awesome functions ;-)
 #
 # update
@@ -89,6 +89,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# shellcheck disable=all
 SCRIPT_DIR=${${(%):-%N}:A:h}
 source "$SCRIPT_DIR/zshrc.common.sh"
 
