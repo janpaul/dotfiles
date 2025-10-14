@@ -28,3 +28,5 @@ brew install cc65
 brew install osmosis
 ## Funny stuff
 brew install cmatrix lolcat nyancat sl
+## Fonts
+brew install font-jetbrains-mono font-jetbrains-mono-nerd-font

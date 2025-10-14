@@ -5,8 +5,12 @@ export HOMEBREW=/home/linuxbrew/.linuxbrew
 #
 # update
 function ,update() {
-  sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-  ,__updateCommon
+  sudo dnf upgrade --refresh -y
+  sudo dnf autoremove -y
+  sudo dnf clean all -y
+  tldr --update
+  rustup update
+  nvm install 24
 }
 
 export CCACHE_DIR=~/.ccache
