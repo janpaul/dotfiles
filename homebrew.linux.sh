@@ -21,12 +21,12 @@ brew install gcc global cmake boost nasm vcpkg folly flex bison libelf-dev libss
 ## Wasm
 brew install emscripten binaryen
 ## images, video, ...
-brew install ffmpeg imagemagick yt-dlp atomicparsley
+brew install ffmpeg ghostscript imagemagick yt-dlp atomicparsley
 ## 6502
 brew install cc65
 ## OSM /maps
 brew install osmosis
 ## Funny stuff
-brew install cmatrix lolcat nyancat sl
+brew install cmatrix lolcat nyancat sl nsnake ninvaders bastet
 ## Fonts
 brew install font-jetbrains-mono font-jetbrains-mono-nerd-font
