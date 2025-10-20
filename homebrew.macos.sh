@@ -19,12 +19,15 @@ brew_start() {
     [[ $STARTED = "stopped" ]] && brew services start "$1"
 }
 
+# requirements for the rest
+brew install lsd bat zsh vim
+
 ## core
-brew_install git zsh tmux vim kakoune tree
+brew_install git tmux kakoune tree
 ## zsh
 brew_install zsh-syntax-highlighting powerlevel10k zsh-autosuggestions zsh-completions zoxide fzf starship
 ## utilities
-brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat fd gh ripgrep neofetch netcat lsd bottom procs
+brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy fd gh ripgrep neofetch netcat bottom procs
 ## server shizzle
 #brew_install redis nginx postgresql sqlite
 ## programming languages and support

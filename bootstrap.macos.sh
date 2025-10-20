@@ -16,19 +16,18 @@ link() {
 
 #
 # install homebrew
-[[ ! -d /usr/local/Homebrew ]] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #
 # install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #
 # install nvm
-if [ ! -d ~/.nvm ]; then
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
-  nvm install $NODE_STABLE
-  nvm install $NODE_LATEST
-fi
+#if [ ! -d ~/.nvm ]; then
+#  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+#  nvm install $NODE_STABLE
+#  nvm install $NODE_LATEST
+#fi
 
 #
 # common ignore file, very useful for ag
@@ -68,11 +67,5 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.finder AppleShowAllFiles -bool true
 chflags nohidden ~/Library/
-
-#
-# Neovim
-NEOVIM_CONFIG=~/.config/nvim
-git clone https://github.com/NvChad/starter $NEOVIM_CONFIG
-[[ -d $NEOVIM_CONFIG ]] && rm -rf $NEOVIM_CONFIG/.git
 
 exit 0
