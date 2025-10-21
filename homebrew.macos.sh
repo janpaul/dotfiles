@@ -64,7 +64,7 @@ brew_install cmatrix lolcat nyancat sl nsnake ninvaders bastet
 brew_cask iterm2 warp ghostty
 
 # Communication
-brew_cask slack
+brew_cask slack whatsapp signal
 
 # Media and stuff
 brew_cask transmit
@@ -81,4 +81,4 @@ brew_cask intellij-idea clion visual-studio-code
 brew_cask google-chrome firefox tor-browser
 
 # Gaming
-brew_cask scummvm
+brew_cask scummvm mame
