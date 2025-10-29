@@ -27,7 +27,8 @@ brew_install git tmux kakoune tree
 ## zsh
 brew_install zsh-syntax-highlighting powerlevel10k zsh-autosuggestions zsh-completions zoxide fzf starship
 ## utilities
-brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy fd gh ripgrep neofetch netcat bottom procs
+brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf 
+brew_install htop calc cointop gnupg watchman git-delta diff-so-fancy fd gh ripgrep neofetch netcat bottom procs zip
 ## server shizzle
 #brew_install redis nginx postgresql sqlite
 ## programming languages and support
@@ -64,11 +65,11 @@ brew_install cmatrix lolcat nyancat sl nsnake ninvaders bastet
 brew_cask iterm2 warp ghostty
 
 # Communication
-brew_cask slack whatsapp signal
+brew_cask slack whatsapp signal tunnelblick
 
 # Media and stuff
 brew_cask transmit
-brew_cask iina transmission handbrak
+brew_cask iina transmission handbrake
 
 # Fonts
 brew_cask font-hack font-jetbrains-mono
