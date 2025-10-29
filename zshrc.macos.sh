@@ -73,18 +73,6 @@ function ,wav2movie {
   ffmpeg -loop 1 -i ~/Documents/amsterdam.png -i "$@" -c:v libx264 -c:a aac -b:a 192k -shortest -pix_fmt yuv420p "$*.mp4"
 }
 
-function ,ip {
-  curl -4 -s https://icanhazip.com
-}
-function ,ip6 {
-  curl -6 -s https://icanhazip.com
-}
-
-function ,w {
-  curl wttr.in/Amsterdam
-}
-
-
 PATH="${HOMEBREW}/opt/curl/bin:$PATH:$TOOLBOX_HOME/scripts:$PNPM_HOME:$BUN_INSTALL/bin"
 
 export PATH

@@ -22,14 +22,6 @@ link() {
 #curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #
-# install nvm
-#if [ ! -d ~/.nvm ]; then
-#  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
-#  nvm install $NODE_STABLE
-#  nvm install $NODE_LATEST
-#fi
-
-#
 # common ignore file, very useful for ag
 link $(pwd)/ignore ~/.ignore
 

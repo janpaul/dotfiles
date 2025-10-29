@@ -4,7 +4,6 @@ export LC_ALL LANG
 
 export HOMEBREW_INSTALL_CLEANUP=true
 eval "$($HOMEBREW/bin/brew shellenv)"
-
 export EMAIL=janpaul@elidon.net
 
 alias ls='lsd'
@@ -13,9 +12,6 @@ alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
 
-source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 #
 # Completely block all autocorrect
 unsetopt correct_all
@@ -23,9 +19,7 @@ unsetopt correct
 
 #
 # Node / nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 #
 # ssh
@@ -45,24 +39,32 @@ export EDITOR=nvim
 #
 # Useful functions
 alias ,w='curl http://wttr.in/Amsterdam'
+alias ,ip='curl -4 -s https://icanhazip.com'
+alias ,ip6='curl -6 -s https://icanhazip.com'
 
 #
 # eval stuff
-eval "$(zoxide init zsh)"
-eval "$(thefuck --alias)"
-eval "$(fzf --zsh)"
+if [[ $- == *i* ]]; then
+  eval "$(zoxide init zsh)"
+  eval "$(thefuck --alias)"
+  eval "$(fzf --zsh)"
+fi
 
 export LDFLAGS="-L${HOMEBREW}/opt/libxml2/lib -L${HOMEBREW}/opt/curl/lib ${LDFLAGS}"
 export CPPFLAGS="-I${HOMEBREW}/opt/libxml2/include -I${HOMEBREW}/opt/curl/include ${CPPFLAGS}"
 export EDITOR=nvim
 export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
 autoload -Uz compinit
-compinit
+compinit -C
 
-#/home/linuxbrew/.linuxbrew
 # Local overrides
 # shellcheck source=/home/janpaul/.zshrc.local
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
+source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Load the prompt through starship
-eval "$(starship init zsh)"
+if [[ $- == *i* ]]; then
+  eval "$(starship init zsh)"
+fi

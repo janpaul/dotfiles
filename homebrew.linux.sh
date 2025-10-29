@@ -9,7 +9,7 @@ brew install thefuck the_silver_searcher tldr curl wget telnet jq p7zip wtf htop
 ## neovim
 brew install neovim
 ## Node
-brew install pnpm
+brew install pnpm fnm node
 ## Haskell
 brew install ghc cabal-install
 ## Python

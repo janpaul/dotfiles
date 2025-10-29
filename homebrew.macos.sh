@@ -34,7 +34,7 @@ brew_install htop calc cointop gnupg watchman git-delta diff-so-fancy fd gh ripg
 ## programming languages and support
 brew_install neovim
 ### Node
-brew_install node yarn pnpm
+brew_install node yarn pnpm fnm
 ### Haskell
 brew_install ghc cabal-install
 ### Python
