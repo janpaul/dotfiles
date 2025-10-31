@@ -1,6 +1,7 @@
 export LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8
 
-export HOMEBREW_INSTALL_CLEANUP=true
+export HOMEBREW_INSTALL_CLEANUP=1
+export HOMEBREW_NO_ENV_HINTS=1
 eval "$($HOMEBREW/bin/brew shellenv)"
 export EMAIL=janpaul@elidon.net
 
