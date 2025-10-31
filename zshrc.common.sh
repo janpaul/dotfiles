@@ -1,6 +1,4 @@
-LC_ALL=en_GB.UTF-8
-LANG=en_GB.UTF-8
-export LC_ALL LANG
+export LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8
 
 export HOMEBREW_INSTALL_CLEANUP=true
 eval "$($HOMEBREW/bin/brew shellenv)"
@@ -28,7 +26,6 @@ export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 #
 # Rust
 PATH=$PATH:~/.cargo/bin
-source "$HOME/.cargo/env"
 
 #
 # Neovim
@@ -47,24 +44,24 @@ alias ,ip6='curl -6 -s https://icanhazip.com'
 if [[ $- == *i* ]]; then
   eval "$(zoxide init zsh)"
   eval "$(thefuck --alias)"
-  eval "$(fzf --zsh)"
 fi
 
 export LDFLAGS="-L${HOMEBREW}/opt/libxml2/lib -L${HOMEBREW}/opt/curl/lib ${LDFLAGS}"
 export CPPFLAGS="-I${HOMEBREW}/opt/libxml2/include -I${HOMEBREW}/opt/curl/include ${CPPFLAGS}"
 export EDITOR=nvim
-export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
 autoload -Uz compinit
 compinit -C
+export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
 
 # Local overrides
 # shellcheck source=/home/janpaul/.zshrc.local
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Load the prompt through starship
 if [[ $- == *i* ]]; then
+  eval "$(fzf --zsh)" # fzf keybindings and completion
   eval "$(starship init zsh)"
 fi
