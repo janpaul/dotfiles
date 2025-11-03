@@ -29,6 +29,11 @@ export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 PATH=$PATH:~/.cargo/bin
 
 #
+# Java
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+#
 # Neovim
 alias vi="nvim"
 alias vim="nvim"
@@ -61,8 +66,7 @@ export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
 source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-# Load the prompt through starship
 if [[ $- == *i* ]]; then
   eval "$(fzf --zsh)" # fzf keybindings and completion
-  eval "$(starship init zsh)"
+  eval "$(starship init zsh)" # Load the prompt through starship
 fi
