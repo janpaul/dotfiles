@@ -1,85 +1,66 @@
 #!/bin/zsh
 
-BREW_CELLAR="/usr/local/Cellar"
-
-brew_install() {
-    for i
-      do [[ ! -d $BREW_CELLAR/$i ]] && brew install "$i"
-    done
-}
-
-brew_cask() {
-    for i
-       do [[ $(brew list --cask | grep "$i") ]] || brew install --cask "$i"
-    done
-}
-
-brew_start() {
-    STARTED=$(brew services list | grep "$1" | awk '{print $2}')
-    [[ $STARTED = "stopped" ]] && brew services start "$1"
-}
-
 # requirements for the rest
 brew install lsd bat zsh vim
 
-## core
-brew_install git tmux kakoune tree
+# core
+brew install git tmux kakoune tree
 ## zsh
-brew_install powerlevel10k zsh-autosuggestions zsh-completions zoxide fzf starship zsh-fast-syntax-highlighting
+brew install powerlevel10k zsh-autosuggestions zsh-completions zoxide fzf starship zsh-fast-syntax-highlighting
 ## utilities
-brew_install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf 
-brew_install htop calc cointop gnupg watchman git-delta diff-so-fancy fd gh ripgrep neofetch netcat bottom procs zip
+brew install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf 
+brew install htop calc cointop gnupg watchman git-delta diff-so-fancy fd gh ripgrep neofetch netcat bottom procs zip
 ## server shizzle
-#brew_install redis nginx postgresql sqlite
+#brew install redis nginx postgresql sqlite
 ## programming languages and support
-brew_install neovim
+brew install neovim
 ### Node
-brew_install node yarn pnpm fnm
+brew install node yarn pnpm fnm
 ### Haskell
-brew_install ghc cabal-install
+brew install ghc cabal-install
 ### Python
-brew_install python
+brew install python
 ### JVM
-brew_install kotlin scala leiningen gradle maven sbt
+brew install kotlin scala leiningen gradle maven sbt
 ### Ruby
-#brew_install rbenv
+#brew install rbenv
 ### Swift
-brew_install swiftformat swiftlint
+brew install swiftformat swiftlint
 ### C / C++
-brew_install global cmake boost nasm vcpkg folly
+brew install global cmake boost nasm vcpkg folly
 ### Wasm
-brew_install emscripten binaryen
+brew install emscripten binaryen
 ### images, video, ...
-brew_install ffmpeg imagemagick yt-dlp atomicparsley
+brew install ffmpeg imagemagick yt-dlp atomicparsley
 ### 6502
-brew_install cc65
+brew install cc65
 # OSM /maps
-brew_install osmosis
+brew install osmosis
 ### Funny stuff
-brew_install cmatrix lolcat nyancat sl nsnake ninvaders bastet
+brew install cmatrix lolcat nyancat sl nsnake ninvaders bastet
 
 #
 # casks
 
 # Terminals
-brew_cask iterm2 warp ghostty
+brew install --cask iterm2 warp ghostty
 
 # Communication
-brew_cask slack whatsapp signal tunnelblick
+brew install --cask slack whatsapp signal tunnelblick
 
 # Media and stuff
-brew_cask transmit
-brew_cask iina transmission handbrake
+brew install --cask transmit balenaetcher
+brew install --cask iina transmission handbrake
 
 # Fonts
-brew_cask font-hack font-jetbrains-mono
-brew_cask font-jetbrains-mono-nerd-font
+brew install --cask font-hack font-jetbrains-mono
+brew install --cask font-jetbrains-mono-nerd-font
 
 # IDE / Development
-brew_cask intellij-idea clion visual-studio-code
+brew install --cask intellij-idea clion visual-studio-code
 
 # Browsers
-brew_cask google-chrome firefox tor-browser
+brew install --cask google-chrome firefox tor-browser
 
 # Gaming
-brew_cask scummvm mame
+brew install --cask scummvm mame
