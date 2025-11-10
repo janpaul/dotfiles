@@ -19,18 +19,6 @@ alias cd="z"
 }
 
 #
-# yt-dlp
-,yt() {
-    yt-dlp --extract-audio --audio-format mp3 --audio-quality 1 --embed-thumbnail -o "%(title)s %(upload_date)s.mp3" "$@"
-}
-,yts() {
-  yt-dlp --extract-audio -f bestaudio --audio-format mp3 --audio-quality 0 --embed-thumbnail -o "%(title)s.mp3" "$@"
-}
-,ytl() {
-  yt-dlp --extract-audio -f bestaudio --audio-format mp3 --audio-quality 0 --embed-thumbnail --sleep-interval 10 --max-sleep-interval 30 -o "%(title)s.mp3" "$@"
-}
-
-#
 # convert .webp to .jpg
 ,webp2jpg() {
   find . -name '*.webp' -exec convert {} {}.jpg \; -exec rm -f {} \;

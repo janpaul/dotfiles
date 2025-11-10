@@ -46,6 +46,18 @@ alias ,ip='curl -4 -s https://icanhazip.com'
 alias ,ip6='curl -6 -s https://icanhazip.com'
 
 #
+# yt-dlp
+,yt() {
+    yt-dlp --extract-audio --audio-format mp3 --audio-quality 1 --embed-thumbnail -o "%(title)s %(upload_date)s.mp3" "$@"
+}
+,yts() {
+  yt-dlp --extract-audio -f bestaudio --audio-format mp3 --audio-quality 0 --embed-thumbnail -o "%(title)s.mp3" "$@"
+}
+,ytl() {
+  yt-dlp --extract-audio -f bestaudio --audio-format mp3 --audio-quality 0 --embed-thumbnail --sleep-interval 10 --max-sleep-interval 30 -o "%(title)s.mp3" "$@"
+}
+
+#
 # eval stuff
 if [[ $- == *i* ]]; then
   eval "$(zoxide init zsh)"

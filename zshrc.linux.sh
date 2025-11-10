@@ -13,6 +13,10 @@ function ,update() {
   rustup update
 }
 
+alias diff="diff-so-fancy"
+alias cat="bat"
+alias cd="z"
+
 export CCACHE_DIR=~/.ccache
 export PATH="/usr/lib/ccache:$PATH"
 
