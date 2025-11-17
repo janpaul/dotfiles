@@ -1,9 +1,6 @@
 #!/bin/zsh
 #
 
-NODE_STABLE=20
-NODE_LATEST=22
-
 if [ $(id -u) -eq 0 ]; then
     echo "don't run this script as root or under sudo. It can and will mess up your homedir."
     exit 1
@@ -13,13 +10,6 @@ link() {
     [[ -f $2 ]] && rm -f $2
     ln -sf $1 $2
 }
-
-#
-# install homebrew
-
-#
-# install rust
-#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #
 # common ignore file, very useful for ag
@@ -59,5 +49,9 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.finder AppleShowAllFiles -bool true
 chflags nohidden ~/Library/
+
+#
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 exit 0
