@@ -63,4 +63,4 @@ brew install --cask intellij-idea clion visual-studio-code
 brew install --cask google-chrome firefox tor-browser
 
 # Gaming
-brew install --cask scummvm mame
+brew install --cask scummvm
