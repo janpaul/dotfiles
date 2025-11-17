@@ -26,8 +26,8 @@ brew install kotlin scala leiningen gradle maven sbt
 #brew install rbenv
 ### Swift
 brew install swiftformat swiftlint
-### C / C++
-brew install global cmake boost nasm vcpkg folly
+### C / C++ / Rust
+brew install global cmake boost nasm vcpkg folly llvm rust
 ### Wasm
 brew install emscripten binaryen
 ### images, video, ...

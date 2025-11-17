@@ -16,8 +16,8 @@ brew install ghc cabal-install
 brew install python
 ## JVM
 brew install kotlin scala leiningen gradle maven sbt
-## C / C++
-brew install gcc global cmake boost nasm vcpkg folly flex bison libelf-dev libssl-dev
+## C / C++ / Rust
+brew install gcc global cmake boost nasm vcpkg folly flex bison libelf-dev libssl-dev llvm rust
 ## Wasm
 brew install emscripten binaryen
 ## images, video, ...
