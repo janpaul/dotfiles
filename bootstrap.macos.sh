@@ -7,6 +7,7 @@ if [ $(id -u) -eq 0 ]; then
 fi
 
 link() {
+    echo "soft linking $1"
     [[ -f $2 ]] && rm -f $2
     ln -sf $1 $2
 }
@@ -52,6 +53,6 @@ chflags nohidden ~/Library/
 
 #
 # Install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 exit 0
