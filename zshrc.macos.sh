@@ -54,5 +54,3 @@ export PATH
 # shellcheck disable=all
 SCRIPT_DIR=${${(%):-%N}:A:h}
 source "$SCRIPT_DIR/zshrc.common.sh"
-
-

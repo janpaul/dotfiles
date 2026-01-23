@@ -20,6 +20,13 @@ unsetopt correct
 # Node / nvm
 eval "$(fnm env --use-on-cd --shell zsh)"
 
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+[ -d "$BUN_INSTALL" ] && export PATH="$BUN_INSTALL/bin:$PATH"
+
 #
 # ssh
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
