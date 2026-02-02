@@ -43,6 +43,10 @@ link $(pwd)/ghci ~/.ghci
 link $(pwd)/gemrc ~/.gemrc
 
 #
+# Starship
+link $(pwd)/starship.toml ~/.config/starship.toml
+
+#
 # Sets some macOs defaults, to make sure they are matching my requirements
 defaults write -g ApplePressAndHoldEnabled -bool true
 defaults write com.apple.Dock autohide-delay -float 0
