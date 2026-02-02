@@ -46,7 +46,7 @@ brew install cmatrix lolcat nyancat sl nsnake ninvaders bastet
 brew install --cask iterm2 warp ghostty
 
 # Communication
-brew install --cask slack whatsapp signal tunnelblick
+brew install --cask slack signal tunnelblick
 
 # Media and stuff
 brew install --cask transmit balenaetcher
