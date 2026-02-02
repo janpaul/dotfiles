@@ -8,7 +8,7 @@ brew install git tmux kakoune tree
 ## zsh
 brew install powerlevel10k zsh-autosuggestions zsh-completions zoxide fzf starship zsh-fast-syntax-highlighting
 ## utilities
-brew install thefuck exa the_silver_searcher tldr curl wget telnet jq p7zip wtf 
+brew install thefuck exa the_silver_searcher tlrc curl wget telnet jq p7zip wtf 
 brew install htop calc cointop gnupg watchman git-delta diff-so-fancy fd gh ripgrep neofetch netcat bottom procs zip
 ## server shizzle
 #brew install redis nginx postgresql sqlite
