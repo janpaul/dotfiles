@@ -8,7 +8,7 @@ brew install git tmux kakoune tree
 ## zsh
 brew install powerlevel10k zsh-autosuggestions zsh-completions zoxide fzf starship zsh-fast-syntax-highlighting
 ## utilities
-brew install thefuck exa the_silver_searcher tlrc curl wget telnet jq p7zip wtf 
+brew install thefuck the_silver_searcher tlrc curl wget jq p7zip wtf 
 brew install htop calc cointop gnupg watchman git-delta diff-so-fancy fd gh ripgrep neofetch netcat bottom procs zip
 ## server shizzle
 #brew install redis nginx postgresql sqlite
@@ -27,7 +27,7 @@ brew install kotlin scala leiningen gradle maven sbt
 ### Swift
 brew install swiftformat swiftlint
 ### C / C++ / Rust
-brew install global cmake boost nasm vcpkg folly llvm rust
+brew install global cmake boost nasm vcpkg folly llvm
 ### Wasm
 brew install emscripten binaryen
 ### images, video, ...
