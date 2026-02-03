@@ -1,5 +1,7 @@
 export HOMEBREW=/home/linuxbrew/.linuxbrew
 
+export SYSTEMD_EDITOR=vim
+
 #
 # Various awesome functions ;-)
 #

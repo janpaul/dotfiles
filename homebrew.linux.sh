@@ -5,7 +5,7 @@ brew install git zsh vim
 ## zsh
 brew install zsh-syntax-highlighting zsh-autosuggestions zsh-completions zoxide fzf starship
 ## utilities
-brew install thefuck the_silver_searcher tldr curl wget telnet jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat fd gh ripgrep neofetch netcat lsd
+brew install thefuck the_silver_searcher tldr curl wget jq p7zip wtf htop calc cointop gnupg watchman git-delta diff-so-fancy bat fd gh ripgrep neofetch netcat lsd
 ## neovim
 brew install neovim
 ## Node

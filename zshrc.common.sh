@@ -34,7 +34,7 @@ export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 #
 # Rust
 PATH=$PATH:~/.cargo/bin
-. "$HOME/.cargo/env"
+[ -d "HOME/.cargo" ] && . "$HOME/.cargo/env"
 
 #
 # Java
