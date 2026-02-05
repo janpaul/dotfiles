@@ -24,3 +24,6 @@ export PATH="/usr/lib/ccache:$PATH"
 # shellcheck disable=all
 SCRIPT_DIR=${${(%):-%N}:A:h}
 source "$SCRIPT_DIR/zshrc.common.sh"
+
+# OpenClaw Completion
+[[ -d "$HOME/.openclaw" ]]; && source "$HOME/.openclaw/completions/openclaw.zsh"
