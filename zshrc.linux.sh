@@ -26,4 +26,4 @@ SCRIPT_DIR=${${(%):-%N}:A:h}
 source "$SCRIPT_DIR/zshrc.common.sh"
 
 # OpenClaw Completion
-[[ -d "$HOME/.openclaw" ]]; && source "$HOME/.openclaw/completions/openclaw.zsh"
+[ -d "$HOME/.openclaw" ] && source "$HOME/.openclaw/completions/openclaw.zsh"
