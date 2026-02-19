@@ -14,7 +14,6 @@ $git_status\
 [](fg:color_aqua bg:color_blue)\
 $c\
 $rust\
-$golang\
 $nodejs\
 $php\
 $java\
@@ -23,7 +22,6 @@ $haskell\
 $python\
 [](fg:color_blue bg:color_bg3)\
 $docker_context\
-$conda\
 [](fg:color_bg3 bg:color_bg1)\
 $time\
 [ ](fg:color_bg1)\
@@ -74,7 +72,7 @@ Pop = ""
 show_always = true
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user ]($style)'
+format = '[$user]($style)'
 
 [hostname]
 ssh_only = false
@@ -85,7 +83,7 @@ disabled = false
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
-format = "[ $path ]($style)"
+format = "[$path]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
