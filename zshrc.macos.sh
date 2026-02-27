@@ -27,14 +27,28 @@ alias cd="z"
 #
 # convert flac to aiff
 ,flac2aiff() {
-  # converts flac to aiff
-  find . -name '*.flac' -exec ffmpeg -i {} -map_metadata 0 -c:a pcm_s16be "{}.aiff" \;
-  # renames all .flac.aiff files to .aiff
-  for f in *.flac.aiff; do mv -- "$f" "${f%.flac.aiff}.aiff"; done
-  # remove flac files
-  rm -f ./*.flac
-  # for files starting with a number, remove the number
-  for f in *.aiff; do mv -- "$f" "$(echo "$f" | sed -E 's/^[0-9]+\. //')"; done
+  src=~/Downloads/m
+  dest=~/Documents/AIFF
+
+  cd "$src" || return 1
+  for f in *.flac
+  do
+    [ -e "$f" ] || continue
+    base="${f%.flac}"
+    clean_base="$(echo "$base" | sed -E 's/^[0-9]+\. //')"
+    target="$dest/$clean_base.aiff"
+    
+    if [ -f "$target" ]; then
+      echo "exists - skip: $base.aiff"
+      continue
+    fi
+
+    echo "converting: $f → $target"
+    if ffmpeg -loglevel error -nostats -i "$f" -map_metadata 0 -c:a pcm_s16be "$target"; then
+      echo "success, removing src: $f"
+      rm -- "$f"
+    fi
+  done
 }
 
 # convert wav to m4a (aac)
