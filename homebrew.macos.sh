@@ -43,13 +43,12 @@ brew install cmatrix lolcat nyancat sl nsnake ninvaders bastet
 # casks
 
 # Terminals
-brew install --cask iterm2 warp ghostty
+brew install --cask iterm2 
 
 # Communication
 brew install --cask slack signal tunnelblick
 
 # Media and stuff
-brew install --cask transmit balenaetcher
 brew install --cask iina transmission handbrake
 
 # Fonts

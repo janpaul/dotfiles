@@ -65,6 +65,10 @@ alias cd="z"
 
 PATH="${HOMEBREW}/opt/curl/bin:$PATH:"
 
+# 
+# Java on Mac
+export JAVA_HOME="/Applications/IntelliJ IDEA.app/Contents/jbr/Contents/Home"
+
 export PATH
 
 # shellcheck disable=all

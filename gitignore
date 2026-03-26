@@ -6,6 +6,7 @@
 .fleet
 # IntellIJ With Bazel
 .ijwb
+.hprof
 
 # Mac shizzle
 .DS_Store
