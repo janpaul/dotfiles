@@ -8,62 +8,7 @@ alias diff="diff-so-fancy"
 alias cat="bat"
 alias cd="z"
 
-#
-# Various awesome functions ;-)
-#
-# update
-,update() {
-  brew update && brew upgrade && brew upgrade --cask && brew cleanup
-  tldr --update
-  rustup update
-}
-
-#
-# convert .webp to .jpg
-,webp2jpg() {
-  find . -name '*.webp' -exec convert {} {}.jpg \; -exec rm -f {} \;
-}
-
-#
-# convert flac to aiff
-,flac2aiff() {
-  src=~/Downloads/m
-  dest=~/Documents/AIFF
-
-  cd "$src" || return 1
-
-  for file in *.flac
-  do
-    [ -e "$file" ] || continue
-    base="${file%.flac}"
-    clean_base="$(echo "$base" | sed -E 's/^[0-9]+\. //')"
-    target="$dest/$clean_base.aiff"
-
-    if [ -f "$target" ]; then
-      echo "exists - skip: $base.aiff"
-      rm -- "$file"
-      continue
-    fi
-
-    echo "converting: $file → $target"
-    if ffmpeg -loglevel error -nostats -i "$file" -map_metadata 0 -c:a pcm_s16be "$target"; then
-      echo "success, removing src: $file"
-      rm -- "$file"
-    fi
-  done
-}
-
-# convert wav to m4a (aac)
-,wav2m4a() {
-  ffmpeg -i "$@" -c:a aac -b:a 256k -ar 44100 "$*.m4a"
-}
-
-# convert wav to a movie suitable for YouTube
-,wav2movie() {
-  ffmpeg -loop 1 -i ~/Documents/amsterdam.png -i "$@" -c:v libx264 -c:a aac -b:a 192k -shortest -pix_fmt yuv420p "$*.mp4"
-}
-
-PATH="${HOMEBREW}/opt/curl/bin:$PATH:"
+PATH="${HOMEBREW}/opt/curl/bin:${HOME}/code/dotfiles/bin.macos:$PATH:"
 
 # 
 # Java on Mac
