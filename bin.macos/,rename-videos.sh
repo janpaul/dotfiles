@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/zsh
 
 DIR="${HOME}/Documents/videos"
 
