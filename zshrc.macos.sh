@@ -14,7 +14,8 @@ PATH="${HOMEBREW}/opt/curl/bin:${HOME}/code/dotfiles/bin.macos:$PATH:"
 # Java on Mac
 export JAVA_HOME="/Applications/IntelliJ IDEA.app/Contents/jbr/Contents/Home"
 
-export VCPKG_ROOT="$HOME/code/vcpkg"
+
+[[ -d "$HOME/code/vcpkg" ]] && export VCPKG_ROOT="$HOME/code/vcpkg"
 
 export PATH
 
