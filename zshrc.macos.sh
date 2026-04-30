@@ -1,25 +1,14 @@
-if [[ -d /opt/homebrew ]]; then
-  export HOMEBREW=/opt/homebrew
-else
-  export HOMEBREW=/usr/local
-fi
+source "${HOME}/code/dotfiles/zshrc.common.sh"
 
-
+# macOS-specific overrides and additions
 alias diff="diff-so-fancy"
 alias cat="bat"
 alias cd="z"
 
-PATH="${HOMEBREW}/opt/curl/bin:${HOME}/code/dotfiles/bin.macos:$PATH"
+PATH="${HOME}/code/dotfiles/bin.macos:${PATH}"
+export PATH
 
-# 
 # Java on Mac
 export JAVA_HOME="/Applications/IntelliJ IDEA.app/Contents/jbr/Contents/Home"
 
 [[ -d "$HOME/code/vcpkg" ]] && export VCPKG_ROOT="$HOME/code/vcpkg"
-
-export PATH
-
-# shellcheck disable=all
-SCRIPT_DIR=${${(%):-%N}:A:h}
-
-source "$SCRIPT_DIR/zshrc.common.sh"

@@ -79,3 +79,5 @@ if [[ $- == *i* ]]; then
   eval "$(fzf --zsh)" # fzf keybindings and completion
   eval "$(starship init zsh)" # Load the prompt through starship
 fi
+
+export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/opt/curl/bin:${PATH}"
