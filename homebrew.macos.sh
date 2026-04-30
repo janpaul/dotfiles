@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # requirements for the rest
-brew install lsd bat zsh vim
+brew install lsd bat zsh vim bash
 
 # core
 brew install git tmux kakoune tree
