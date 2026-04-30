@@ -38,6 +38,8 @@ brew install cc65
 brew install osmosis
 ### Funny stuff
 brew install cmatrix lolcat nyancat sl nsnake ninvaders bastet
+### Mac App Store CLI
+brew install mas
 
 #
 # casks
