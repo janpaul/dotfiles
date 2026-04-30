@@ -4,8 +4,6 @@
 # Check what's missing without installing:
 #   brew bundle check --file=~/code/dotfiles/Brewfile
 #
-# Remove anything not in this file (careful!):
-#   brew bundle cleanup --file=~/code/dotfiles/Brewfile --force
 
 # requirements for the rest
 brew "lsd"
