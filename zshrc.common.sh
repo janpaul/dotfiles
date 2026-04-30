@@ -39,11 +39,6 @@ export BUN_INSTALL="$HOME/.bun"
 [ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env"
 
 #
-# Java
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-
-#
 # Neovim
 alias vi="nvim"
 alias vim="nvim"
@@ -55,11 +50,13 @@ alias ,w='curl http://wttr.in/Amsterdam'
 alias ,ip='curl -4 -s https://icanhazip.com'
 alias ,ip6='curl -6 -s https://icanhazip.com'
 
+export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/opt/curl/bin:${PATH}"
+
 #
 # eval stuff
 if [[ $- == *i* ]]; then
   eval "$(zoxide init zsh)"
-  eval "$(thefuck --alias)"
+  eval "$(pay-respects zsh --alias)"
 fi
 
 export LDFLAGS="-L${HOMEBREW_PREFIX}/opt/libxml2/lib -L${HOMEBREW_PREFIX}/opt/curl/lib ${LDFLAGS}"
@@ -80,4 +77,3 @@ if [[ $- == *i* ]]; then
   eval "$(starship init zsh)" # Load the prompt through starship
 fi
 
-export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/opt/curl/bin:${PATH}"

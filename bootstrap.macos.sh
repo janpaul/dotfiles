@@ -59,4 +59,7 @@ chflags nohidden ~/Library/
 # Install homebrew
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# Install pay-respects
+curl -sSfL https://raw.githubusercontent.com/iffse/pay-respects/main/install.sh | sh
+
 exit 0
