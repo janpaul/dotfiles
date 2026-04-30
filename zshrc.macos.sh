@@ -12,3 +12,5 @@ export JAVA_HOME="/Applications/IntelliJ IDEA.app/Contents/jbr/Contents/Home"
 export PATH="${JAVA_HOME}/bin:${PATH}"
 
 [[ -d "$HOME/code/vcpkg" ]] && export VCPKG_ROOT="$HOME/code/vcpkg"
+
+source "${HOME}/code/dotfiles/zshrc.post.sh"

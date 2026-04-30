@@ -8,3 +8,5 @@ alias cd="z"
 
 export CCACHE_DIR=~/.ccache
 export PATH="/usr/lib/ccache:${HOME}/code/dotfiles/bin.linux:${PATH}"
+
+source "${HOME}/code/dotfiles/zshrc.post.sh"
