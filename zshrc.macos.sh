@@ -3,7 +3,6 @@ source "${HOME}/code/dotfiles/zshrc.common.sh"
 # macOS-specific overrides and additions
 alias diff="diff-so-fancy"
 alias cat="bat"
-alias cd="z"
 
 PATH="${HOME}/code/dotfiles/bin.macos:${PATH}"
 export PATH
