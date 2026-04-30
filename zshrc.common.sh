@@ -6,6 +6,8 @@ alias l='lsd -l'
 alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
+alias du="dust"
+alias sed="sd"
 
 # loads homebrew
 export HOMEBREW_INSTALL_CLEANUP=1
@@ -42,6 +44,7 @@ export BUN_INSTALL="$HOME/.bun"
 # Neovim
 alias vi="nvim"
 alias vim="nvim"
+alias neofetch="fastfetch"
 export EDITOR=nvim
 
 #

@@ -23,7 +23,7 @@ From the official homebrew documentation:
 ### Prepare configuation:
 
 ```sh
-./bootstrap.macos.sh
+./bootstrap.sh
 ```
 
 This will make symlinks to all required configuration files, i.e. ~/.zshrc -> zshrc.sh.

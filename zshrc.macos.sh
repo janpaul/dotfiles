@@ -1,7 +1,7 @@
 source "${HOME}/code/dotfiles/zshrc.common.sh"
 
 # macOS-specific overrides and additions
-alias diff="diff-so-fancy"
+alias diff="git-delta"
 alias cat="bat"
 
 PATH="${HOME}/code/dotfiles/bin.macos:${PATH}"
