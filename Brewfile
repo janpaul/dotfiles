@@ -11,8 +11,6 @@
 brew "lsd"
 brew "bat"
 brew "zsh"
-brew "vim"
-brew "bash"
 
 # core
 brew "git"
