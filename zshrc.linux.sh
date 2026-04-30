@@ -1,5 +1,3 @@
-export HOMEBREW=/home/linuxbrew/.linuxbrew
-
 export SYSTEMD_EDITOR=vim
 
 alias diff="diff-so-fancy"
@@ -11,5 +9,6 @@ export PATH="/usr/lib/ccache:${HOME}/code/dotfiles/bin.linux:$PATH"
 
 # shellcheck disable=all
 SCRIPT_DIR=${${(%):-%N}:A:h}
+
 source "$SCRIPT_DIR/zshrc.common.sh"
 

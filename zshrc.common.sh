@@ -1,8 +1,4 @@
 export LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8
-
-export HOMEBREW_INSTALL_CLEANUP=1
-export HOMEBREW_NO_ENV_HINTS=1
-eval "$($HOMEBREW/bin/brew shellenv)"
 export EMAIL=janpaul@elidon.net
 
 alias ls='lsd'
@@ -11,13 +7,24 @@ alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
 
+# loads homebrew
+export HOMEBREW_INSTALL_CLEANUP=1
+export HOMEBREW_NO_ENV_HINTS=1
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+elif [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 #
 # Completely block all autocorrect
 unsetopt correct_all
 unsetopt correct
 
 #
-# Node / nvm
+# Node / fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # bun completions
@@ -28,13 +35,8 @@ export BUN_INSTALL="$HOME/.bun"
 [ -d "$BUN_INSTALL" ] && export PATH="$BUN_INSTALL/bin:$PATH"
 
 #
-# ssh
-export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
-
-#
 # Rust
-PATH=$PATH:~/.cargo/bin
-[ -d "HOME/.cargo" ] && . "$HOME/.cargo/env"
+[ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env"
 
 #
 # Java
@@ -53,10 +55,6 @@ alias ,w='curl http://wttr.in/Amsterdam'
 alias ,ip='curl -4 -s https://icanhazip.com'
 alias ,ip6='curl -6 -s https://icanhazip.com'
 
-,ytl() {
-
-}
-
 #
 # eval stuff
 if [[ $- == *i* ]]; then
@@ -64,19 +62,18 @@ if [[ $- == *i* ]]; then
   eval "$(thefuck --alias)"
 fi
 
-export LDFLAGS="-L${HOMEBREW}/opt/libxml2/lib -L${HOMEBREW}/opt/curl/lib ${LDFLAGS}"
-export CPPFLAGS="-I${HOMEBREW}/opt/libxml2/include -I${HOMEBREW}/opt/curl/include ${CPPFLAGS}"
-export EDITOR=nvim
+export LDFLAGS="-L${HOMEBREW_PREFIX}/opt/libxml2/lib -L${HOMEBREW_PREFIX}/opt/curl/lib ${LDFLAGS}"
+export CPPFLAGS="-I${HOMEBREW_PREFIX}/opt/libxml2/include -I${HOMEBREW_PREFIX}/opt/curl/include ${CPPFLAGS}"
+export FPATH="${HOMEBREW_PREFIX}/share/zsh-completions:${FPATH}"
 autoload -Uz compinit
 compinit -C
-export FPATH=$HOMEBREW/share/zsh-completions:$FPATH
 
 # Local overrides
 # shellcheck source=/home/janpaul/.zshrc.local
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-source $HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${HOMEBREW_PREFIX}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 if [[ $- == *i* ]]; then
   eval "$(fzf --zsh)" # fzf keybindings and completion
