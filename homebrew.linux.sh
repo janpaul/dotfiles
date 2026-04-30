@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 ## core unixy stuff
-brew install git zsh vim
+brew install git zsh vim bash
 ## zsh
 brew install zsh-syntax-highlighting zsh-autosuggestions zsh-completions zoxide fzf starship
 ## utilities
@@ -28,5 +28,3 @@ brew install cc65
 brew install osmosis
 ## Funny stuff
 brew install cmatrix lolcat nyancat sl nsnake ninvaders bastet
-## Fonts
-brew install font-jetbrains-mono font-jetbrains-mono-nerd-font
