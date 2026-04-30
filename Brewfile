@@ -39,7 +39,6 @@ brew "p7zip"
 brew "wtf"
 brew "htop"
 brew "calc"
-brew "cointop"
 brew "gnupg"
 brew "watchman"
 brew "git-delta"
@@ -127,41 +126,3 @@ brew "sl"
 brew "nsnake"
 brew "ninvaders"
 brew "bastet"
-
-# Mac App Store CLI
-brew "mas"
-
-#
-# Casks
-#
-
-# Terminals
-cask "iterm2"
-
-# Communication
-cask "slack"
-cask "signal"
-cask "tunnelblick"
-
-# Media
-cask "iina"
-cask "transmission"
-cask "handbrake"
-
-# Fonts
-cask "font-hack"
-cask "font-jetbrains-mono"
-cask "font-jetbrains-mono-nerd-font"
-
-# IDE / Development
-cask "intellij-idea"
-cask "clion"
-cask "visual-studio-code"
-
-# Browsers
-cask "google-chrome"
-cask "firefox"
-cask "tor-browser"
-
-# Gaming
-cask "scummvm"

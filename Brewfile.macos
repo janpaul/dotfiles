@@ -1,0 +1,37 @@
+# Mac App Store CLI
+brew "mas"
+
+#
+# Casks
+#
+
+# Terminals
+cask "iterm2"
+
+# Communication
+cask "slack"
+cask "signal"
+cask "tunnelblick"
+
+# Media
+cask "iina"
+cask "transmission"
+cask "handbrake-app"
+
+# Fonts
+cask "font-hack"
+cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+
+# IDE / Development
+cask "intellij-idea"
+cask "clion"
+cask "visual-studio-code"
+
+# Browsers
+cask "google-chrome"
+cask "firefox"
+cask "tor-browser"
+
+# Gaming
+cask "scummvm-app"
