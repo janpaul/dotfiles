@@ -1,3 +1,5 @@
+brew "mole"
+
 # Mac App Store CLI
 brew "mas"
 

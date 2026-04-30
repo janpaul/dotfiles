@@ -46,7 +46,6 @@ brew "netcat"
 brew "bottom"
 brew "procs"
 brew "zip"
-brew "mole"
 
 # server stuff (commented out)
 # brew "redis"
