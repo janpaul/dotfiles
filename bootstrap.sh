@@ -3,63 +3,63 @@
 SCRIPT_DIR=${0:A:h}
 cd "$SCRIPT_DIR" || exit 1
 
-if [ $(id -u) -eq 0 ]; then
+if [ "$(id -u)" -eq 0 ]; then
     echo "don't run this script as root or under sudo. It can and will mess up your homedir."
     exit 1
 fi
 
+# Make sure the ~/.config directory exists, as some of the links will be placed there
 mkdir -p ~/.config
 
 link() {
   echo "soft linking $1 -> $2"
-  [[ -e $2 || -L $2 ]] && rm -f $2
-  ln -sf $1 $2
+  [[ -e "$2" || -L "$2" ]] && rm -f "$2"
+  ln -sf "$1" "$2"
 }
 
 #
 # common ignore file, very useful for ag
-link $(pwd)/ignore ~/.ignore
+link "${SCRIPT_DIR}/ignore" ~/.ignore
 
 #
 # git
-link $(pwd)/gitconfig ~/.gitconfig
-link $(pwd)/gitignore ~/.gitignore
+link "${SCRIPT_DIR}/gitconfig" ~/.gitconfig
+link "${SCRIPT_DIR}/gitignore" ~/.gitignore
 [[ ! -f ~/.gitconfig.local ]] && echo "#" > ~/.gitconfig.local
 
 #
 # zsh
 if [[ "$(uname)" == "Darwin" ]]; then
-    link $(pwd)/zshrc.macos.sh ~/.zshrc
+    link "${SCRIPT_DIR}/zshrc.macos.sh" ~/.zshrc
 else
-    link $(pwd)/zshrc.linux.sh ~/.zshrc
+    link "${SCRIPT_DIR}/zshrc.linux.sh" ~/.zshrc
 fi
 
 #
 # tmux
-link $(pwd)/tmux.conf ~/.tmux.conf
+link "${SCRIPT_DIR}/tmux.conf" ~/.tmux.conf
 
 #
 # npmrc
-link $(pwd)/npmrc ~/.npmrc
+link "${SCRIPT_DIR}/npmrc" ~/.npmrc
 
 #
 # haskell
-link $(pwd)/ghci ~/.ghci
+link "${SCRIPT_DIR}/ghci" ~/.ghci
 
 #
 # ruby
-link $(pwd)/gemrc ~/.gemrc
+link "${SCRIPT_DIR}/gemrc" ~/.gemrc
 
 #
 # Starship
-link $(pwd)/starship.toml ~/.config/starship.toml
+link "${SCRIPT_DIR}/starship.toml" ~/.config/starship.toml
 
 #
 # Sets some macOs defaults, to make sure they are matching my requirements
 if [[ "$(uname)" == "Darwin" ]]; then
   defaults write -g ApplePressAndHoldEnabled -bool true
   defaults write com.apple.Dock autohide-delay -float 0
-  defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
   defaults write com.apple.finder QLEnableTextSelection -bool true
   defaults write com.apple.finder AppleShowAllFiles -bool true
   chflags nohidden ~/Library/
