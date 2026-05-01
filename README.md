@@ -2,7 +2,7 @@
 
 This is my personal unix/shell/command line configuration.
 
-You can look but you can't touch ;-)
+You can look, but you can't touch ;-)
 
 ## Installation
 
@@ -12,40 +12,30 @@ You can look but you can't touch ;-)
 git clone git@github.com:janpaul/dotfiles.git
 ```
 
-### Install Homebrew
-
-From the official homebrew documentation:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-### Prepare configuation:
+### Prepare configuration:
 
 ```sh
 ./bootstrap.sh
 ```
 
-This will make symlinks to all required configuration files, i.e. ~/.zshrc -> zshrc.sh.
+This will make symlinks to all required configuration files, i.e. `~/.zshrc` -> `dotfiles/zshrc.sh`. This will also 
+install [Homebrew](https://brew.sh/) and [Rust](https://rust-lang.org) when they are not already installed.
 
 ### Install all homebrew packages:
 
-On macOS:
 ```sh
-./homebrew.macos.sh
+./install-packages.sh
 ```
 
-On Linux:
-```sh
-./homebrew.linux.sh
-```
+([install-packages](install-packages.sh) will autodetect your OS and install the required packages for it, as defined 
+in the [Brewfile](Brewfile))
 
-### Update:
+## Update:
 
 Once in a while, run:
 
 ```sh
-,update
+,update.sh (in the dotfiles/bin directory)
 ```
 
 This will update, well, everything.
