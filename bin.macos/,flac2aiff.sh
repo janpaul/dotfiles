@@ -2,7 +2,7 @@
 
 src=~/Downloads/m
 dest=~/Documents/AIFF
-
+aiff_meta=~/code/aiff-beatport
 cd "$src" || return 1
 
 for file in *.flac
@@ -20,7 +20,17 @@ do
 
   echo "converting: $file → $target"
   if ffmpeg -loglevel error -nostats -i "$file" -map_metadata 0 -c:a pcm_s16be "$target"; then
+    touch -r "$file" "$target"
+
     echo "success, removing src: $file"
     rm -- "$file"
+
+    if [ -d $aiff_meta ]; then
+      echo "creating metadata for $target"
+      pushd || return
+      cd $aiff_meta || return 1
+      npm run tag -- "$target"
+      popd || return
+    fi
   fi
 done
