@@ -41,15 +41,11 @@ link "${SCRIPT_DIR}/npmrc" ~/.npmrc
 
 #
 # nvim
-link' "${SCRIPT_DIR}/nvim" ~/.config/nvim
+link "${SCRIPT_DIR}/nvim" ~/.config/nvim
 
 #
 # haskell
 link "${SCRIPT_DIR}/ghci" ~/.ghci
-
-#
-# ruby
-link "${SCRIPT_DIR}/gemrc" ~/.gemrc
 
 #
 # Starship
