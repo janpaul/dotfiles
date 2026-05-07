@@ -7,7 +7,6 @@ alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
 alias du="dust"
-alias sed="sd"
 
 # loads homebrew
 export HOMEBREW_INSTALL_CLEANUP=1
