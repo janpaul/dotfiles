@@ -36,10 +36,6 @@ else
 fi
 
 #
-# tmux
-link "${SCRIPT_DIR}/tmux.conf" ~/.tmux.conf
-
-#
 # npmrc
 link "${SCRIPT_DIR}/npmrc" ~/.npmrc
 
