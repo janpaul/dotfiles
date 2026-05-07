@@ -47,6 +47,8 @@ brew "netcat"
 brew "bottom"
 brew "procs"
 brew "zip"
+brew "tree-sitter"
+brew "tree-sitter-cli"
 
 # server stuff (commented out)
 # brew "redis"
