@@ -1,8 +1,1 @@
-color=true
-description=true
-format-package-lock=true
-loglevel=notice
-package-lock=true
-save=true
-include[]=dev
-legacy-peer-deps=true
+#color=true
