@@ -24,10 +24,6 @@ fi
 unsetopt correct_all
 unsetopt correct
 
-#
-# Node / fnm
-eval "$(fnm env --use-on-cd --shell zsh)"
-
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
