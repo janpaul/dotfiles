@@ -1,3 +1,3 @@
 #!/opt/homebrew/bin/zsh
 
-find . -name '*.webp' -exec convert {} {}.jpg \; -exec rm -f {} \;
+for f in ~/Downloads/*.webp; do magick "$f" "${f%.webp}.jpg" && rm "$f"; done
