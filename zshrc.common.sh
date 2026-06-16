@@ -9,6 +9,8 @@ alias lt='lsd --tree'
 alias du="dust"
 
 # loads homebrew
+export HOMEBREW_NO_INSTALL_UPGRADE_CONFIRM=1
+export HOMEBREW_NO_INSTALL_UPGRADE_CONFIRM=1
 export HOMEBREW_INSTALL_CLEANUP=1
 export HOMEBREW_NO_ENV_HINTS=1
 if [[ -x /opt/homebrew/bin/brew ]]; then
