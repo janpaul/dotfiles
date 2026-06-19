@@ -28,7 +28,6 @@ cask "font-jetbrains-mono-nerd-font"
 # IDE / Development
 cask "intellij-idea"
 cask "clion"
-cask "visual-studio-code"
 
 # Browsers
 cask "google-chrome"
