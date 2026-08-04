@@ -36,3 +36,6 @@ cask "tor-browser"
 
 # Gaming
 cask "scummvm-app"
+
+# Development
+cask "copilot-cli"
