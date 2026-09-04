@@ -4,7 +4,7 @@ source "${HOME}/code/dotfiles/zshrc.common.sh"
 alias diff="git-delta"
 alias cat="bat"
 
-PATH="${HOME}/code/dotfiles/bin.macos:${PATH}"
+PATH="${HOME}/code/dotfiles/bin.macos:${HOME}/.local/bin:${PATH}"
 export PATH
 
 # Java on Mac
