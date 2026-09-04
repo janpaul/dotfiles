@@ -1,9 +1,12 @@
 #!/opt/homebrew/bin/zsh
 FOLDERS=("$HOME/Documents/videos" "$HOME/Downloads/gif")
-MIN_TIME_SECONDS=15
+MIN_TIME_SECONDS=14
 MAX_TIME_SECONDS=120
 MIN_RESOLUTION=480
 PLAYLIST="$HOME/.xxx-playlist.m3u"
+
+# Enable the following to re-build the playlist
+# rm -f "$PLAYLIST"
 
 caffeinate -d -i -w $$ &
 
@@ -34,8 +37,11 @@ if [ ! -e "$PLAYLIST" ]; then
        [ "$duration_int" -le "$MAX_TIME_SECONDS" ] && \
        [ "$width" -ge "$MIN_RESOLUTION" ] && \
        [ "$height" -ge "$MIN_RESOLUTION" ]; then
-        echo " (adding)"
+        echo " (✅ adding)"
         echo "$f" >> "$PLAYLIST"
+      else
+        echo " (❌ removing [${duration_int}s, ${width}x${height}])"
+        rm -- "${f}"
       fi
     done
   done
