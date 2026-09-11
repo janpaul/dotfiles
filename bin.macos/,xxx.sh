@@ -96,7 +96,7 @@ if [ ! -e "$PLAYLIST" ]; then
     popd || exit
   fi
 
-
+  echo "doing xxx videos"
   files=("${(@f)$(find "$VIDEOS_DIR" -maxdepth 1 -type f -iname "*.mp4")}")
   total=${#files[@]}
   count=0
