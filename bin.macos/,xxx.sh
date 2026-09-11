@@ -22,9 +22,11 @@ draw_progress() {
   tput el
 }
 
+refresh=0
 if [ "$1" = "refresh" ]; then
   echo "refreshing playlist..."
   rm -f "$PLAYLIST"
+  refresh=1
 fi
 
 # Enable the following to re-build the playlist
@@ -39,7 +41,6 @@ fi
 
 
 if [ ! -e "$PLAYLIST" ]; then
-  echo "playlist does not exist, creating..."
   touch "$PLAYLIST"
 
   if [ -z "$BLOB_READ_WRITE_TOKEN" ]; then
@@ -75,29 +76,27 @@ if [ ! -e "$PLAYLIST" ]; then
        cursor=$(echo "$response" | jq -r '.cursor')
      done
 
-    files=(*.mp4)
+    giffiles=(*.gif)
     count=0
-    total=${#files[@]}
-    for f in "${files[@]}"; do
+    total=${#giffiles[@]}
+    for f in "${giffiles[@]}"; do
       ((count++))
       if [[ -z "${pathnames[(r)$f]}" ]]; then
-        echo "uploading: $f"
         curl -s -X PUT "https://blob.vercel-storage.com/$f" \
               -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
               -H "x-api-version: 7" \
               -H "x-add-random-suffix: 0" \
               --data-binary "@$f" \
-              -o /dev/null -w "  -> HTTP %{http_code}\n"
+              -o /dev/null -w "  $f upload -> HTTP %{http_code}\n"
       fi
       draw_progress "$count" "$total"
-
     done
 
     popd || exit
   fi
 
-  echo "doing xxx videos"
-  files=("${(@f)$(find "$VIDEOS_DIR" -maxdepth 1 -type f -iname "*.mp4")}")
+  printf "\n doing xxx videos"
+  files=("${(@f)$(find "$VIDEOS_DIR" -maxdepth 1 -type f -name "*.mp4")}")
   total=${#files[@]}
   count=0
   for filepath in "${files[@]}"; do
@@ -145,12 +144,16 @@ fi
 caffeinate -d -i -w $$ &
 
 # greyscale: add --saturation=0
-open -a VLC --args  \
-  --fullscreen \
-  --random \
-  --loop \
-  --no-video-title-show --no-osd --no-video-deco --mouse-hide-timeout=0 --video-on-top \
-  --avcodec-hw=any \
-  --no-audio \
-  --video-filter=adjust:sharpen --contrast=1.15 --brightness=1.05 --gamma=1.1 --sharpen-sigma=0.3 \
-  "$PLAYLIST"
+
+# only play videos when refresh is not requested, otherwise just refresh the playlist and exit
+if [ "$refresh" -eq 0 ]; then
+  open -a VLC --args  \
+    --fullscreen \
+    --random \
+    --loop \
+    --no-video-title-show --no-osd --no-video-deco --mouse-hide-timeout=0 --video-on-top \
+    --avcodec-hw=any \
+    --no-audio \
+    --video-filter=adjust:sharpen --contrast=1.15 --brightness=1.05 --gamma=1.1 --sharpen-sigma=0.3 \
+    "$PLAYLIST"
+  fi
