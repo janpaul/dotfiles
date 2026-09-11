@@ -22,6 +22,11 @@ draw_progress() {
   tput el
 }
 
+if [ "$1" = "refresh" ]; then
+  echo "refreshing playlist..."
+  rm -f "$PLAYLIST"
+fi
+
 # Enable the following to re-build the playlist
 # rm -f "$PLAYLIST"
 
