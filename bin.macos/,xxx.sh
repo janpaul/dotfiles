@@ -1,14 +1,11 @@
 #!/opt/homebrew/bin/zsh
 VIDEOS_DIR="$HOME/Documents/videos"
+EROTIGIF_DIR="$HOME/Documents/erotigif"
 MIN_TIME_SECONDS=14
 MAX_TIME_SECONDS=120
 MIN_RESOLUTION=480
 PLAYLIST="$HOME/.xxx-playlist.m3u"
-
-# Enable the following to re-build the playlist
-# rm -f "$PLAYLIST"
-
-caffeinate -d -i -w $$ &
+ENV_FILE="${0:A:h:h}/.env"
 
 draw_progress() {
   local current=$1
@@ -25,9 +22,75 @@ draw_progress() {
   tput el
 }
 
+# Enable the following to re-build the playlist
+# rm -f "$PLAYLIST"
+
+if [ -f "$ENV_FILE" ]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$ENV_FILE"
+  set +a
+fi
+
+
 if [ ! -e "$PLAYLIST" ]; then
   echo "playlist does not exist, creating..."
   touch "$PLAYLIST"
+
+  if [ -z "$BLOB_READ_WRITE_TOKEN" ]; then
+    :
+  else
+    echo "doing erotic videos"
+    pushd || exit
+    cd "$EROTIGIF_DIR" || exit
+
+    pathnames=()
+    cursor=""
+     while true; do
+       if [ -z "$cursor" ]; then
+         response=$(curl -s "https://blob.vercel-storage.com?limit=1000" \
+           -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
+           -H "x-api-version: 7")
+       else
+         response=$(curl -s "https://blob.vercel-storage.com?limit=1000&cursor=$cursor" \
+           -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
+           -H "x-api-version: 7")
+       fi
+
+       page_pathnames=("${(@f)$(echo "$response" | jq -r '.blobs[].pathname')}")
+       for i in {1..${#page_pathnames[@]}}; do
+         page_pathnames[$i]="${page_pathnames[$i]:t}"
+       done
+       pathnames+=("${page_pathnames[@]}")
+
+       has_more=$(echo "$response" | jq -r '.hasMore')
+       if [ "$has_more" != "true" ]; then
+         break
+       fi
+       cursor=$(echo "$response" | jq -r '.cursor')
+     done
+
+    files=(*.mp4)
+    count=0
+    total=${#files[@]}
+    for f in "${files[@]}"; do
+      ((count++))
+      if [[ -z "${pathnames[(r)$f]}" ]]; then
+        echo "uploading: $f"
+        curl -s -X PUT "https://blob.vercel-storage.com/$f" \
+              -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
+              -H "x-api-version: 7" \
+              -H "x-add-random-suffix: 0" \
+              --data-binary "@$f" \
+              -o /dev/null -w "  -> HTTP %{http_code}\n"
+      fi
+      draw_progress "$count" "$total"
+
+    done
+
+    popd || exit
+  fi
+
 
   files=("${(@f)$(find "$VIDEOS_DIR" -maxdepth 1 -type f -iname "*.mp4")}")
   total=${#files[@]}
@@ -73,6 +136,8 @@ if [ ! -e "$PLAYLIST" ]; then
     draw_progress "$count" "$total"
   done
 fi
+
+caffeinate -d -i -w $$ &
 
 # greyscale: add --saturation=0
 open -a VLC --args  \
