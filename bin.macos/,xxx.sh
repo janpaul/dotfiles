@@ -76,7 +76,7 @@ if [ ! -e "$PLAYLIST" ]; then
        cursor=$(echo "$response" | jq -r '.cursor')
      done
 
-    giffiles=(*.gif)
+    giffiles=(*.mp4)
     count=0
     total=${#giffiles[@]}
     for f in "${giffiles[@]}"; do
@@ -96,7 +96,7 @@ if [ ! -e "$PLAYLIST" ]; then
   fi
 
   printf "\n doing xxx videos"
-  files=("${(@f)$(find "$VIDEOS_DIR" -maxdepth 1 -type f -name "*.mp4")}")
+  files=("${(@f)$(find "$VIDEOS_DIR" -maxdepth 1 -type f -iname "*.mp4")}")
   total=${#files[@]}
   count=0
   for filepath in "${files[@]}"; do
