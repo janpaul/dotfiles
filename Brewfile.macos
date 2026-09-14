@@ -39,3 +39,6 @@ cask "scummvm-app"
 
 # Development
 cask "copilot-cli"
+
+# Homebrew
+cask "homebrew-app"
