@@ -15,6 +15,9 @@ cask "slack"
 cask "signal"
 cask "tunnelblick"
 
+# Tools
+cask "raycast"
+
 # Media
 cask "iina"
 cask "transmission"
