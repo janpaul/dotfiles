@@ -3,6 +3,9 @@ brew "mole"
 # Mac App Store CLI
 brew "mas"
 
+# Tools
+brew "cliclick"
+
 #
 # Casks
 #
