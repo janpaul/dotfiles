@@ -141,12 +141,11 @@ if [ ! -e "$PLAYLIST" ]; then
   done
 fi
 
-caffeinate -d -i -w $$ &
-
-# greyscale: add --saturation=0
-
 # only play videos when refresh is not requested, otherwise just refresh the playlist and exit
 if [ "$refresh" -eq 0 ]; then
+  # make sure the Mac does not go to sleep while playing videos
+  caffeinate -d -i -w $$ &
+
   open -a VLC --args  \
     --fullscreen \
     --random \
