@@ -9,15 +9,15 @@ find "$DIR" -maxdepth 1 -type f \( \
   ext="${filepath##*.}"
   ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
   hash=$(md5sum "$filepath" | cut -c1-24)
-  newname="${DIR}/${hash}.${ext_lower}"
+    newName="${DIR}/${hash}.${ext_lower}"
 
-  if [ "$filepath" = "$newname" ]; then
+  if [ "$filepath" = "$newName" ]; then
     echo "Skipping (already named correctly): $filepath"
-  elif [ -f "$newname" ]; then
+  elif [ -f "$newName" ]; then
     echo "Removing duplicate: $filepath"
     rm "$filepath"
   else
-    echo "Renaming: $filepath -> $newname"
-    mv "$filepath" "$newname"
+    echo "Renaming: $filepath -> $newName"
+    mv "$filepath" "$newName"
   fi
 done

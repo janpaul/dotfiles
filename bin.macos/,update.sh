@@ -16,3 +16,4 @@ command -v tldr &>/dev/null && tldr --update
 if [[ $hostname != "SaintVitusDance" ]]; then
   /opt/homebrew/bin/zsh "$dir"/,rename-videos.sh
 fi
+/opt/homebrew/bin/zsh "$dir"/,erotigif.sh

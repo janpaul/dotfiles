@@ -1,6 +1,5 @@
 #!/opt/homebrew/bin/zsh
 VIDEOS_DIR="$HOME/Documents/videos"
-EROTIGIF_DIR="$HOME/Documents/erotigif"
 MIN_TIME_SECONDS=14
 MAX_TIME_SECONDS=120
 MIN_RESOLUTION=480
@@ -42,58 +41,6 @@ fi
 
 if [ ! -e "$PLAYLIST" ]; then
   touch "$PLAYLIST"
-
-  if [ -z "$BLOB_READ_WRITE_TOKEN" ]; then
-    :
-  else
-    echo "doing erotic videos"
-    pushd || exit
-    cd "$EROTIGIF_DIR" || exit
-
-    pathnames=()
-    cursor=""
-     while true; do
-       if [ -z "$cursor" ]; then
-         response=$(curl -s "https://blob.vercel-storage.com?limit=1000" \
-           -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
-           -H "x-api-version: 7")
-       else
-         response=$(curl -s "https://blob.vercel-storage.com?limit=1000&cursor=$cursor" \
-           -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
-           -H "x-api-version: 7")
-       fi
-
-       page_pathnames=("${(@f)$(echo "$response" | jq -r '.blobs[].pathname')}")
-       for i in {1..${#page_pathnames[@]}}; do
-         page_pathnames[$i]="${page_pathnames[$i]:t}"
-       done
-       pathnames+=("${page_pathnames[@]}")
-
-       has_more=$(echo "$response" | jq -r '.hasMore')
-       if [ "$has_more" != "true" ]; then
-         break
-       fi
-       cursor=$(echo "$response" | jq -r '.cursor')
-     done
-
-    giffiles=(*.mp4)
-    count=0
-    total=${#giffiles[@]}
-    for f in "${giffiles[@]}"; do
-      ((count++))
-      if [[ -z "${pathnames[(r)$f]}" ]]; then
-        curl -s -X PUT "https://blob.vercel-storage.com/$f" \
-              -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
-              -H "x-api-version: 7" \
-              -H "x-add-random-suffix: 0" \
-              --data-binary "@$f" \
-              -o /dev/null -w "  $f upload -> HTTP %{http_code}\n"
-      fi
-      draw_progress "$count" "$total"
-    done
-
-    popd || exit
-  fi
 
   printf "\n doing xxx videos"
   files=("${(@f)$(find "$VIDEOS_DIR" -maxdepth 1 -type f -iname "*.mp4")}")
