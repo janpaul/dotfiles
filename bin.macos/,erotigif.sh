@@ -3,11 +3,10 @@ set -euo pipefail
 
 src=~/Documents/erotigif
 website=~/code/elidon-website
-out=$website/app/xxx/[type]/erotigif.json
-cdn_base="https://cdn.elidon.net/erotigif/"
+out=$website/app/xxx/erotigif.json
 
 # Sync erotigifs to the cdn
-rsync -avz --delete --exclude='.DS_Store' --chmod=D755,F644 \
+rsync -avz  --exclude='.DS_Store' --chmod=D755,F644 \
   $src janpaul@home.elidon.net:/var/www/cdn
 
 # Make a new index
