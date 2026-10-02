@@ -15,6 +15,7 @@ brew "git"
 brew "tmux"
 brew "kakoune"
 brew "tree"
+brew "rsync" # prefer to the system one
 
 # zsh
 brew "zsh-autosuggestions"
