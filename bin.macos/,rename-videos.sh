@@ -1,23 +1,28 @@
 #!/opt/homebrew/bin/zsh
 
-DIR="${HOME}/Documents/videos"
+setopt extendedglob nullglob
 
-find "$DIR" -maxdepth 1 -type f \( \
-  -iname "*.gif" -o -iname "*.mp4" -o -iname "*.mp4" -o -iname "*.MP4" \
-  -iname "*.mov" -o -iname "*.webm" \
-\) | while read -r filepath; do
-  ext="${filepath##*.}"
-  ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
-  hash=$(md5sum "$filepath" | cut -c1-24)
-    newName="${DIR}/${hash}.${ext_lower}"
+dir="${HOME}/Documents/videos"
+pattern='(#i)*.(gif|mp4|mov|webm)(.)'
 
-  if [ "$filepath" = "$newName" ]; then
-    echo "Skipping (already named correctly): $filepath"
-  elif [ -f "$newName" ]; then
-    echo "Removing duplicate: $filepath"
-    rm "$filepath"
+for f in $dir/$~pattern; do
+  name=${f:t}
+  ext=${${f:e}:l}
+
+  [[ $name =~ '^[0-9a-f]{24}\.(gif|mp4|mov|webm)$' ]] && continue
+
+  hash=$(md5 -q "$f")
+  new=$dir/${hash[1,24]}.$ext
+
+  if [[ -e $new ]]; then
+    if cmp -s -- "$f" "$new"; then
+      echo "Duplicate → Trash: $name"
+      trash -- "$f"
+    else
+      echo "⚠️  Hash collision, nothing done: $name vs ${new:t}" >&2
+    fi
   else
-    echo "Renaming: $filepath -> $newName"
-    mv "$filepath" "$newName"
+    echo "Renamed: $name -> ${new:t}"
+    mv -n -- "$f" "$new"
   fi
 done
