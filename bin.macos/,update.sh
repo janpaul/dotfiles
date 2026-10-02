@@ -12,9 +12,5 @@ command -v cargo-install-update &>/dev/null && cargo install-update -a
 # Refresh tldr docs
 command -v tldr &>/dev/null && tldr --update
 
-# Rename XXX videos on the MacBook Pro (=elvis)
-if [[ $hostname == "elvis" ]]; then
-  /opt/homebrew/bin/zsh "$dir"/,rename-videos.sh
-fi
-
+/opt/homebrew/bin/zsh "$dir"/,rename-videos.sh
 /opt/homebrew/bin/zsh "$dir"/,erotigif.sh
