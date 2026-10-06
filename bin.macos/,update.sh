@@ -14,3 +14,4 @@ command -v tldr &>/dev/null && tldr --update
 
 /opt/homebrew/bin/zsh "$dir"/,rename-videos.sh
 /opt/homebrew/bin/zsh "$dir"/,erotigif.sh
+/opt/homebrew/bin/zsh "$dir"/,mixes.sh
