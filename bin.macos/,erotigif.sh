@@ -1,6 +1,10 @@
 #!/opt/homebrew/bin/zsh
 set -euo pipefail
 
+print -- ${(l:$(tput cols)::*:)${:-}}
+
+echo "Syncing erotigifs to the cdn and updating index"
+
 src=~/Documents/erotigif
 website=~/code/elidon-website
 out=$website/app/xxx/erotigif.json
@@ -20,3 +24,4 @@ files=( $src/*.mp4(N.on:t) )   # :t = alleen de bestandsnaam
 jq -n '$ARGS.positional' --args $files > $out.tmp && mv $out.tmp $out
 echo "${#files} video's in $out"
 
+echo

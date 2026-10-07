@@ -1,6 +1,9 @@
 #!/opt/homebrew/bin/zsh
 
 hostname=$(scutil --get LocalHostName)
+
+print -- ${(l:$(tput cols)::*:)${:-}}
+
 if [[ $hostname == "elvis" ]]; then
   echo "Renaming videos in ~/Documents/videos"
 else
@@ -34,3 +37,5 @@ for f in $dir/$~pattern; do
     mv -n -- "$f" "$new"
   fi
 done
+
+echo
