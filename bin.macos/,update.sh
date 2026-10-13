@@ -12,6 +12,6 @@ command -v cargo-install-update &>/dev/null && cargo install-update -a
 # Refresh tldr docs
 command -v tldr &>/dev/null && tldr --update
 
-/opt/homebrew/bin/zsh "$dir"/,rename-videos.sh
+/opt/homebrew/bin/zsh "$dir"/,xvideos.sh
 /opt/homebrew/bin/zsh "$dir"/,erotigif.sh
 /opt/homebrew/bin/zsh "$dir"/,mixes.sh
