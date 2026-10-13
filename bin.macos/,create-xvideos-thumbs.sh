@@ -2,7 +2,7 @@
 
 zparseopts -D -E n:=opt_n
 limit=${opt_n[2]:-0}       # 0 = no no, no no no no, no no no no, no no there's no limit
-dir="${1:-$HOME/Documents/xvideos}"
+dir="${1:-$HOME/Documents/xvideos/thumbs}"
 width=640          # thumbnail width, height follows aspect ratio
 height=360
 pos=0.10           # grab frame at 10% of the duration
