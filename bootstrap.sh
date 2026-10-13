@@ -34,6 +34,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
     link "${SCRIPT_DIR}/zshrc.linux.sh" ~/.zshrc
 fi
+link -s "${SCRIPT_DIR}/zsh/zshenv" ~/.zshenv
 
 #
 # npmrc

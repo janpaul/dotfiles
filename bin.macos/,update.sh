@@ -13,5 +13,7 @@ command -v cargo-install-update &>/dev/null && cargo install-update -a
 command -v tldr &>/dev/null && tldr --update
 
 /opt/homebrew/bin/zsh "$dir"/,xvideos.sh
+/opt/homebrew/bin/zsh "$dir"/,create-xvideos-thumbs.sh
+/opt/homebrew/bin/zsh "$dir"/,sync-xvideos.sh
 /opt/homebrew/bin/zsh "$dir"/,erotigif.sh
 /opt/homebrew/bin/zsh "$dir"/,mixes.sh

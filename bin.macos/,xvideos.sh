@@ -1,15 +1,10 @@
 #!/opt/homebrew/bin/zsh
 
-hostname=$(scutil --get LocalHostName)
-
 print -- ${(l:$(tput cols)::*:)${:-}}
 
-if [[ $hostname == "elvis" ]]; then
-  echo "Renaming videos in ~/Documents/videos"
-else
-  echo "This script is only intended to run on the MacBook Pro (=elvis). Exiting."
-  exit 1
-fi
+require_host elvis
+echo "Renaming videos in ~/Documents/videos"
+
 
 setopt extendedglob nullglob
 

@@ -1,0 +1,4 @@
+local want=$1
+[[ $(scutil --get LocalHostName) == $want ]] && return 0
+print -u2 "This script is only intended to run on $want. Exiting."
+exit 1
