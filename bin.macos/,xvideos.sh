@@ -28,7 +28,7 @@ for f in $dir/$~pattern; do
   if [[ -e $new ]]; then
     if cmp -s -- "$f" "$new"; then
       echo "Duplicate → Trash: $name"
-      trash -- "$f"
+      trash "$f" || { echo " 🗑️ trash failed, twin is identical, thus rm" >&2; rm -- "$f" }
     else
       echo "⚠️  Hash collision, nothing done: $name vs ${new:t}" >&2
     fi
