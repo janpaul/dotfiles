@@ -31,7 +31,7 @@ for f in *.(#i)mp4(N); do
     ss=$(( dur > 0 ? dur * pos : 5 ))
 
     if ffmpeg -nostdin -v error -ss "$ss" -i "$f" -frames:v 1 \
-              -vf "scale=${width}:${height}:force_original_aspect_ratio=decrease,pad=${width}:${height}:(ow-iw)/2:(oh-ih)/2:black" \
+              -vf "split[a][b];[a]scale=${width}:${height}:force_original_aspect_ratio=increase,crop=${width}:${height},boxblur=20:2,eq=brightness=-0.15[bg];[b]scale=${width}:${height}:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2" \
               "$jpeg"; then
         echo "✓ $jpeg"; ((made++))
     else
