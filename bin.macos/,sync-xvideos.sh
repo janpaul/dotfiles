@@ -3,14 +3,13 @@
 require_host elvis
 echo "Syncing xvideos to the cdn and updating index"
 
-
 set -euo pipefail
 
 print -- ${(l:$(tput cols)::*:)${:-}}
 
 src=~/Documents/xvideos
 website=~/code/elidon-website
-out=$website/app/xxx/xvideos.json
+out=$website/app/xvideos/xvideos.json
 
 # Sync xvideos to the cdn
 rsync -avz  --exclude='.DS_Store' --chmod=D755,F644 \
