@@ -16,13 +16,13 @@ rsync -avz  --exclude='.DS_Store' --chmod=D755,F644 \
 
 # Make a new index
 if [[ ! -d $website ]]; then
-  echo "Website niet gevonden: $website" >&2
+  echo "Website not found: $website" >&2
   exit 1
 fi
 
 mkdir -p ${out:h}
 files=( $src/*.mp4(N.on:t) )   # :t = alleen de bestandsnaam
 jq -n '$ARGS.positional' --args $files > $out.tmp && mv $out.tmp $out
-echo "${#files} video's in $out"
+echo "${#files} videos in $out"
 
 echo
