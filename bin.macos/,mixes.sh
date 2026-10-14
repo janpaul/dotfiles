@@ -5,6 +5,7 @@ src=~/Documents/mixes
 
 print -- ${(l:$(tput cols)::*:)${:-}}
 
+require_host elvis
 echo "Syncing mixes to the cdn"
 
 # Sync mixes to the cdn
