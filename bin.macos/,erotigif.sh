@@ -3,6 +3,7 @@ set -euo pipefail
 
 print -- ${(l:$(tput cols)::*:)${:-}}
 
+require_host elvis
 echo "Syncing erotigifs to the cdn and updating index"
 
 src=~/Documents/erotigif
