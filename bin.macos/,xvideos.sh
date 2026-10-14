@@ -8,7 +8,7 @@ echo "Renaming videos in ~/Documents/videos"
 
 setopt extendedglob nullglob
 
-dir="${HOME}/Documents/videos"
+dir="${HOME}/Documents/xvideos"
 ph_pattern='(#i).*.(gif|mp4|mov|webm).icloud(.)'
 
 # 1. Fetch evicted files (.name.mp4.icloud) first

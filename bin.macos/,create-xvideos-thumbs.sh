@@ -21,7 +21,7 @@ mkdir -p "$thumbs"
 made=0 skipped=0 failed=0
 
 setopt extendedglob
-for f in *.(#i)mp4(N); do
+for f in (^*\ <->).(#i)mp4(N); do
     jpeg="$thumbs/${f:r}.jpg"
     if [[ -f $jpeg ]]; then ((skipped++)); continue; fi
     (( limit && made + failed >= limit )) && break
