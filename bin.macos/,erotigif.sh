@@ -8,7 +8,7 @@ echo "Syncing erotigifs to the cdn and updating index"
 
 src=~/Documents/erotigif
 website=~/code/elidon-website
-out=$website/app/xxx/erotigif.json
+out=$website/app/erotigif/erotigif.json
 
 # Sync erotigifs to the cdn
 rsync -avz  --exclude='.DS_Store' --chmod=D755,F644 \
