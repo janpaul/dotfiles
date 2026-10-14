@@ -47,3 +47,6 @@ bazel-testlogs
 
 #
 .npmrc
+
+# Claude
+.fuse_hidden*
