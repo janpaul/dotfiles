@@ -1,14 +1,15 @@
 #!/opt/homebrew/bin/zsh
 
+print -- ${(l:$(tput cols)::*:)${:-}}
+
 require_host elvis
+
 echo "Syncing xvideos to the cdn and updating index"
 
 set -euo pipefail
 
-print -- ${(l:$(tput cols)::*:)${:-}}
-
 src=~/Documents/xvideos
-website=~/code/elidon-website
+website=~/code/stiffnipples
 out=$website/app/xvideos/xvideos.json
 
 # Sync xvideos to the cdn
