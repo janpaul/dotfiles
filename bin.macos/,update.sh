@@ -12,6 +12,9 @@ command -v cargo-install-update &>/dev/null && cargo install-update -a
 # Refresh tldr docs
 command -v tldr &>/dev/null && tldr --update
 
+# From this point on, only run on the Macbook Pro (elvis)
+require_host elvis
+
 /opt/homebrew/bin/zsh "$dir"/,xvideos.sh
 /opt/homebrew/bin/zsh "$dir"/,create-xvideos-thumbs.sh
 /opt/homebrew/bin/zsh "$dir"/,sync-xvideos.sh
