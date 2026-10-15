@@ -1,8 +1,8 @@
 #!/opt/homebrew/bin/zsh
 
 dir=${0:A:h}
-hostname=$(scutil --get LocalHostName)
 
+# Update homebrew and cleanup
 brew update && brew upgrade --yes && brew cleanup && brew autoremove
 
 # Update rust shizzle
