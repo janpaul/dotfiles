@@ -7,6 +7,6 @@ alias cat="bat"
 alias cd="z"
 
 export CCACHE_DIR=~/.ccache
-export PATH="/usr/lib/ccache:${HOME}/code/dotfiles/bin.linux:${PATH}"
+export PATH="/usr/lib/ccache:${DOTFILES}/bin.linux:${PATH}"
 
-source "${HOME}/code/dotfiles/zshrc.post.sh"
+source "${DOTFILES}/zshrc.post.sh"

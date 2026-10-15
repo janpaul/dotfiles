@@ -1,3 +1,5 @@
 . "$HOME/.cargo/env"
+
+export DOTFILES=${HOME}/code/dotfiles
 fpath=(~/code/dotfiles/zsh/functions $fpath)
 autoload -Uz ~/code/dotfiles/zsh/functions/*(N:t)

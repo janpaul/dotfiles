@@ -1,4 +1,4 @@
-export LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8
+export LANG=en_GB.UTF-8
 export EMAIL=janpaul@elidon.net
 
 alias ls='lsd'
@@ -10,7 +10,6 @@ alias du="dust"
 
 # loads homebrew
 export HOMEBREW_NO_INSTALL_UPGRADE_CONFIRM=1
-export HOMEBREW_NO_INSTALL_UPGRADE_CONFIRM=1
 export HOMEBREW_INSTALL_CLEANUP=1
 export HOMEBREW_NO_ENV_HINTS=1
 if [[ -x /opt/homebrew/bin/brew ]]; then
@@ -20,6 +19,10 @@ elif [[ -x /usr/local/bin/brew ]]; then
 elif [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+# History
+HISTFILE=~/.zsh_history HISTSIZE=50000 SAVEHIST=50000
+setopt share_history hist_ignore_all_dups hist_ignore_space extended_history
 
 #
 # Completely block all autocorrect
@@ -32,10 +35,6 @@ unsetopt correct
 # bun
 export BUN_INSTALL="$HOME/.bun"
 [ -d "$BUN_INSTALL" ] && export PATH="$BUN_INSTALL/bin:$PATH"
-
-#
-# Rust
-[ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env"
 
 #
 # Neovim

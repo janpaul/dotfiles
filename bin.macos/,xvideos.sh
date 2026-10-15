@@ -5,7 +5,6 @@ print -- ${(l:$(tput cols)::*:)${:-}}
 require_host elvis
 echo "Renaming videos in ~/Documents/videos"
 
-
 setopt extendedglob nullglob
 
 dir="${HOME}/Documents/xvideos"
