@@ -119,6 +119,6 @@ echo "${#files} video's in $out"
 
 # Sync xvideos to the cdn
 rsync -avz  --exclude='.DS_Store' --chmod=D755,F644 \
-  $src janpaul@home.elidon.net:/var/www/cdn
+  $src janpaul@home.elidon.net:/home/www/cdn
 
 echo
