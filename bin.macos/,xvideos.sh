@@ -2,8 +2,6 @@
 
 set -uo pipefail
 
-
-require_host elvis
 print -- ${(l:$(tput cols)::*:)${:-}}
 
 echo "Doing xvideos"

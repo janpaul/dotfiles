@@ -3,9 +3,9 @@ set -euo pipefail
 
 src=~/Documents/mixes
 
+require_host elvis
 print -- ${(l:$(tput cols)::*:)${:-}}
 
-require_host elvis
 echo "Syncing mixes to the cdn"
 
 # Sync mixes to the local cdn
