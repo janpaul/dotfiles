@@ -28,10 +28,6 @@ cask "font-hack"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 
-# IDE / Development
-cask "intellij-idea"
-cask "clion"
-
 # Browsers
 cask "google-chrome"
 cask "firefox"
